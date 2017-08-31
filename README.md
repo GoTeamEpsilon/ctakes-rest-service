@@ -6,9 +6,13 @@ _...This project is under active development..._
 
 The goal of this project is to process unstructured clinical text through a smart natural language processing system in a fast, accurate, and easy to setup way. Although the target system is the popular OpenEMR EHR, this solution is generic so that any modern and customizable EMR can leverage this solution.
 
-## Usage
+## Demonstration
 
-1. Install the latest OpenEMR with the INTELLIGENT_CHART_SUMMARIZATION_FEATURE globals flag set to true
+_(gif or video of the whole process here)_
+
+## Install (10 Easy Steps)
+
+1. Install the latest OpenEMR with the `INTELLIGENT_CHART_SUMMARIZATION_FEATURE` globals flag set to `true`
 2. Get a UMLS account at https://uts.nlm.nih.gov/ (may take a couple of days)
 3. (command to clone relevant repos)
 4. (instructions on placing UMLS credentials in the right place)
@@ -16,9 +20,8 @@ The goal of this project is to process unstructured clinical text through a smar
 6. (instructions on placing local host IP in the right place)
 7. (instructions on installing Apache UIMA-AS and cTAKES with the proper environment variables)
 8. (instructions on enabling the nodeidPipeline)
-9. (command to build all images)
-10. docker-compose up
-11. (screenshots of how the feature in action)
+9. (script invocation to build all images)
+10. `docker-compose up`
 
 ## Systems Overview
 
@@ -29,13 +32,15 @@ The goal of this project is to process unstructured clinical text through a smar
 
 ```
 {
-  "pid": 1,
-  "eid": 1,
-  "body": "<<clinical text>>",
-  "app_secret": "<<app secret>>"
+  "pid": 123,
+  "eid": 321,
+  "fid": 234,
+  "body": "some clinical text",
+  "app_secret": "the app secret"
 }
 ```
-5. Container verifies the request and then writes the data to `PID1_EID1_(TIMESTAMP).txt` and places it in a shared volume for cTAKES processing.
+...where `eid` == encounter id and `fid` == encounter form id.
+5. Container verifies the request and then writes the data to `PID123_EID321_FID_234_(TIMESTAMP).txt` and places it in a shared volume for cTAKES processing.
 6. [The cTAKES Docker Collection Reader](https://github.com/tmills/ctakes-docker#running-via-collection-reader) is kicked off, which queues up (ActiveMQ) any files in the shared directory for cTAKES processing
 7. cTAKES processes the text files and returns which files were processed into respective XML files
 8. Relevant text files are deleted
@@ -80,3 +85,6 @@ The goal of this project is to process unstructured clinical text through a smar
 
 12. OpenEMR processes the new information and the doctor can almost instantly (via long polling) view the information in a friendly HTML/JS/CSS web viewer via the [cTAKES Friendly Web UI](https://github.com/GoTeamEpsilon/cTAKES-Friendly-Web-UI)
 
+## LICENSE
+
+MIT
