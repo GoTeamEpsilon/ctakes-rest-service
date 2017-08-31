@@ -1,25 +1,25 @@
 # cTAKES Concept Mention Parser
 
-When given an XMI result from cTAKES, this parser puts together a nice JSON representation of the concept mentions with medical codes and text.
+This is a child component of https://github.com/GoTeamEpsilon/cTAKES-Intelligent-Chart-Summarization-Solution, the user-friendly, native EMR NLP solution.
 
-![gif](https://github.com/MatthewVita/cTAKES-Concept-Mention-Parser/blob/master/demo.gif?raw=true)
+## Responsibilites
 
-## INSTALL
+This container, when given an XMI result from cTAKES, puts together a nice JSON representation of the concept mentions with medical codes and text. When the processing is done, the JSON is sent to a container that communicates back to the EMR.
+
+
+
+## Install
+
+_(Note that this will be taken care of in the parent via `docker-compose`)_
 
 ```
 $ sudo pip install xmltodict
 $ sudo pip install watchdog
 ```
 
-## RUN
+## Demonstration
 
-```
-$ python parser.py
-$ # place xml file(s) in the data directory (this directory is being watched for additions)
-$ cat data/you-xml-file(s)
-```
-
-## EXAMPLE
+![gif](https://github.com/MatthewVita/cTAKES-Concept-Mention-Parser/blob/master/demo.gif?raw=true)
 
 As an example, some fake data (credit: https://www.med.unc.edu/medselect/resources/sample-notes/sample-initial-visit-note-1) has been checked into the samples folder to get and idea of the output quality:
 
@@ -27,17 +27,12 @@ As an example, some fake data (credit: https://www.med.unc.edu/medselect/resourc
 
 `$ vi samples/data.json` to see
 
-## TODOS
+## TODOs
 
+- Set up solution in a Docker container
 - Make the lookup O(1) by indexing on XML ID
-- Handle `textsem:MedicationEventMention`
-- Handle `textsem:LabMention`
-- Python3/pep compliance
+- Switch to Python3/pep
 - Unit tests
-- Docker container
-- Instructions for setting up the solution as a UIMA pipeline subscriber
-- Code documentation
-- Partition data by coding scheme
 
 ## LICENSE
 
