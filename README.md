@@ -29,6 +29,8 @@ As an example, some fake data (credit: https://www.med.unc.edu/medselect/resourc
 
 ## TODOs
 
+- Remove duplicate codes
+- `begin` and `end` should be ints, not strings
 - Set up solution in a Docker container
 - Make the lookup O(1) by indexing on XML ID
 - Switch to Python3/pep
