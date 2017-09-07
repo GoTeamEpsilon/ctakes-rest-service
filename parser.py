@@ -114,8 +114,8 @@ class CodeExtractor(Thread):
       for concept_id in concept_mention['@ontologyConceptArr'].split(' '):
         selected_concept_mentions.append({
           'id':    concept_id,
-          'begin': concept_mention['@begin'],
-          'end':   concept_mention['@end']
+          'begin': int(concept_mention['@begin']),
+          'end':   int(concept_mention['@end'])
         })
 
     self.mentions[mention_type] = []
