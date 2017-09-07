@@ -13,8 +13,8 @@ This container, when given an XMI result from cTAKES, puts together a nice JSON 
 _(Note that this will be taken care of in the parent via `docker-compose`)_
 
 ```
-$ sudo pip install xmltodict
-$ sudo pip install watchdog
+$ docker build -t ctakes-concept-mention-parser .
+$ docker run -d -v ~/cTAKES-Concept-Mention-Parser/data:/usr/src/app/data -t ctakes-concept-mention-parser
 ```
 
 ## Demonstration
@@ -29,9 +29,6 @@ As an example, some fake data (credit: https://www.med.unc.edu/medselect/resourc
 
 ## TODOs
 
-- Remove duplicate codes
-- `begin` and `end` should be ints, not strings
-- Set up solution in a Docker container
 - Make the lookup O(1) by indexing on XML ID
 - Switch to Python3/pep
 - Unit tests
