@@ -22,9 +22,9 @@ class Watcher:
     try:
       while True:
         time.sleep(5)
-    except:
+    except Exception as err:
       self.observer.stop()
-      print 'Error'
+      print(err, 'An error happened')
 
     self.observer.join()
 
@@ -75,8 +75,9 @@ class CodeExtractor(Thread):
       self.converted_data = xmltodict.parse(file_handler.read())
       file_handler.close()
       return 0
-    except IOError:
+    except IOError as ioerr:
       self.log('Error: File ' + self.file + ' does not appear to exist')
+      print(ioerr, 'IOError occured')
       return 1
 
 
