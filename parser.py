@@ -1,7 +1,7 @@
 import json
 import xmltodict
 import sys
-# import HTMLParser
+#import HTMLParser
 from html.parser import HTMLParser
 import os
 import time
@@ -93,7 +93,7 @@ class CodeExtractor(Thread):
 
     for concept in raw_concepts:
       nullable_code_name = 'unknown'
-      if '@code' in concept:
+      if concept.has_key('@code'):
         nullable_code_name = concept['@code']
 
       self.concepts.append({
@@ -105,7 +105,7 @@ class CodeExtractor(Thread):
 
 
   def map_specific_concept_mention(self, mention_type):
-    if ('textsem:' + mention_type) not in self.converted_data['xmi:XMI']:
+    if not self.converted_data['xmi:XMI'].has_key('textsem:' + mention_type):
       self.log('Error: couldn\'t process mention_type ' + mention_type)
       return
 
@@ -141,7 +141,7 @@ class CodeExtractor(Thread):
     if ret_code == 0:
       self.log('Started processing')
       self.extract_all_concepts()
-      for key, value in self.MENTION_TYPE.items():
+      for key, value in self.MENTION_TYPE.iteritems():
         self.process_mention(value, False)
 
       self.write_dict_to_json()
