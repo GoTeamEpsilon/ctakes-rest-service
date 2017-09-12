@@ -93,7 +93,7 @@ class CodeExtractor(Thread):
 
     for concept in raw_concepts:
       nullable_code_name = 'unknown'
-      if concept.has_key('@code'):
+      if concept.in('@code'):
         nullable_code_name = concept['@code']
 
       self.concepts.append({
@@ -105,7 +105,7 @@ class CodeExtractor(Thread):
 
 
   def map_specific_concept_mention(self, mention_type):
-    if not self.converted_data['xmi:XMI'].has_key('textsem:' + mention_type):
+    if not self.converted_data['xmi:XMI'].in('textsem:' + mention_type):
       self.log('Error: couldn\'t process mention_type ' + mention_type)
       return
 
