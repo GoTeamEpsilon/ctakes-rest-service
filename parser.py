@@ -150,5 +150,3 @@ class CodeExtractor(Thread):
       self.log('Error: couldn\'t convert XML to dict')
 
 
-w = Watcher()
-w.run()
