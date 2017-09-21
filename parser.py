@@ -1,9 +1,5 @@
 import json
 import xmltodict
-import sys
-import HTMLParser
-from html.parser import HTMLParser
-import os
 import time
 import datetime
 from watchdog.observers import Observer
@@ -47,9 +43,10 @@ class CodeExtractor(Thread):
     Thread.__init__(self)
     self.file = file
     self.converted_data = {}
-    self.concepts = []
-    self.mentions = {}
-    self.MENTION_TYPE = {
+    self.unmapped_concept_mentions = []
+    self.mapped_concept_mentions = {}
+    self.flattened_mapped_concept_mentions = []
+    self.CONCEPT_MENTION_TYPE = {
       'MEDICATION_MENTION':       'MedicationMention',
       'DISEASE_DISORDER_MENTION': 'DiseaseDisorderMention',
       'PROCEDURE_MENTION':        'ProcedureMention',
@@ -67,7 +64,7 @@ class CodeExtractor(Thread):
 
 
   def run(self):
-    self.process_and_output_all_mentions()
+    self.process_and_output_all_concept_mentions()
 
 
   def convert_xml_to_dict(self):
@@ -84,69 +81,72 @@ class CodeExtractor(Thread):
 
   def write_dict_to_json(self):
     file = open(self.file + '.json', 'w')
-    file.write(json.dumps(self.mentions))
+
+    final_structure = {
+      'partitioned': self.mapped_concept_mentions,
+      'flattened': self.flattened_mapped_concept_mentions
+    }
+    file.write(json.dumps(final_structure))
     file.close()
 
 
-  def extract_all_concepts(self):
-    raw_concepts = self.converted_data['xmi:XMI']['refsem:UmlsConcept']
+  def extract_all_unmapped_concept_mentions(self):
+    unmapped_concept_mentions = self.converted_data['xmi:XMI']['refsem:UmlsConcept']
 
-    for concept in raw_concepts:
+    for concept_mention in unmapped_concept_mentions:
       nullable_code_name = 'unknown'
-      if '@code' in concept:
-        nullable_code_name = concept['@code']
+      if '@code' in concept_mention:
+        nullable_code_name = concept_mention['@code']
 
-      self.concepts.append({
-        'scheme': concept['@codingScheme'],
-        'id'    : concept['@xmi:id'],
-        'text'  : concept['@preferredText'],
+      self.unmapped_concept_mentions.append({
+        'scheme': concept_mention['@codingScheme'],
+        'id'    : concept_mention['@xmi:id'],
+        'text'  : concept_mention['@preferredText'],
         'code'  : nullable_code_name
       })
 
 
-  def map_specific_concept_mention(self, mention_type):
-    if ('textsem:' + mention_type) not in self.converted_data['xmi:XMI']:
-      self.log('Error: couldn\'t process mention_type ' + mention_type)
+  def map_unmapped_concept_mentions_by_type(self, concept_mention_type):
+    if ('textsem:' + concept_mention_type) not in self.converted_data['xmi:XMI']:
+      self.log('Error: couldn\'t process concept mention type ' + concept_mention_type)
       return
 
-    raw_concept_mentions = self.converted_data['xmi:XMI']['textsem:' + mention_type]
+    unmapped_concept_mentions_by_type = self.converted_data['xmi:XMI']['textsem:' + concept_mention_type]
 
-    selected_concept_mentions = []
-    for concept_mention in raw_concept_mentions:
-      for concept_id in concept_mention['@ontologyConceptArr'].split(' '):
-        selected_concept_mentions.append({
+    concept_mentions_for_mapping = []
+    for unmapped_concept_mention_by_type in unmapped_concept_mentions_by_type:
+      for concept_id in unmapped_concept_mention_by_type['@ontologyConceptArr'].split(' '):
+        concept_mentions_for_mapping.append({
           'id':    concept_id,
-          'begin': int(concept_mention['@begin']),
-          'end':   int(concept_mention['@end'])
+          'begin': int(unmapped_concept_mention_by_type['@begin']),
+          'end':   int(unmapped_concept_mention_by_type['@end'])
         })
 
-    self.mentions[mention_type] = []
-    for concept in self.concepts:
-      for selected_concept_mention in selected_concept_mentions:
-        if concept['id'] == selected_concept_mention['id']:
-          concept['begin'] = selected_concept_mention['begin']
-          concept['end'] = selected_concept_mention['end']
-          self.mentions[mention_type].append(concept)
+    self.mapped_concept_mentions[concept_mention_type] = []
+    for unmapped_concept_mention in self.unmapped_concept_mentions:
+      for concept_mention_for_mapping in concept_mentions_for_mapping:
+        if concept_mention_for_mapping['id'] == unmapped_concept_mention['id']:
+          mapped_concept_mention = unmapped_concept_mention # start with known data
+          mapped_concept_mention['begin'] = concept_mention_for_mapping['begin']
+          mapped_concept_mention['end'] = concept_mention_for_mapping['end']
+
+          # Build up a structure that is partitioned by concept type
+          self.mapped_concept_mentions[concept_mention_type].append(mapped_concept_mention)
+
+          # Also include the item in a flattened structure
+          mapped_concept_mention['type'] = concept_mention_type
+          self.flattened_mapped_concept_mentions.append(mapped_concept_mention)
 
 
-  def process_mention(self, mention_type, should_write):
-    self.map_specific_concept_mention(mention_type)
-
-    if should_write:
-      self.write_dict_to_json()
-
-
-  def process_and_output_all_mentions(self):
+  def process_and_output_all_concept_mentions(self):
     ret_code = self.convert_xml_to_dict()
     if ret_code == 0:
       self.log('Started processing')
-      self.extract_all_concepts()
-      for key, value in self.MENTION_TYPE.items():
-        self.process_mention(value, False)
+      self.extract_all_unmapped_concept_mentions()
+      for key, value in self.CONCEPT_MENTION_TYPE.items():
+        self.map_unmapped_concept_mentions_by_type(value)
 
       self.write_dict_to_json()
       self.log('Completed processing')
     else:
       self.log('Error: couldn\'t convert XML to dict')
-
-

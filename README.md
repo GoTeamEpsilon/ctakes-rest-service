@@ -30,7 +30,6 @@ As an example, some fake data (credit: https://www.med.unc.edu/medselect/resourc
 ## TODOs
 
 - Make the lookup O(1) by indexing on XML ID
-- Switch to Python3/pep
 - Unit tests
 
 ## LICENSE
