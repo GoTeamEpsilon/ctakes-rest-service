@@ -1,14 +1,24 @@
 import pytest
+import unittest
 from parser import *
 import os
 
 ###
 ### Unit Tests ###
 
-# Test individual parts of parser
-# Handler class
-# CodeExtractor class
+## CodeExtractor class
 
+# CodeExtractor.__init__ CHECK FOR STATE AT CREATION ACROSS VARIOUS SELF VARIABLES
+
+# CodeExtractor.log INSPECT COMPLETE MESSAGE VARIABLE FOR EXISTENCE
+
+# CodeExtractor.convert_xml_to_dict RAISE ERROR
+# CodeExtractor.convert_xml_to_dict RETURN DICTIONARY
+
+# CodeExtractor.write_dict_to_json INSPECT FINAL_STRUCTURE VARIABLE FOR JSON-NESS
+
+# CodeExtractor.extract_all_unmapped_concept_mentions ???
+# CodeExtractor.map_unmapped_concept_mentions_by_type ???
 
 ###
 ### Integration Tests ###
