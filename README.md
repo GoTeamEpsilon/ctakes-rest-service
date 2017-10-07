@@ -4,8 +4,7 @@ This is a child component of https://github.com/GoTeamEpsilon/cTAKES-Intelligent
 
 ## Responsibilites
 
-This container, when given an XMI result from cTAKES, puts together a nice JSON representation of the concept mentions with medical codes and text. When the processing is done, the JSON is sent to a container that communicates back to the EMR.
-
+This container, when given an XMI result from cTAKES, puts together a nice JSON representation of the concept mentions with medical codes and text. When the processing is done, the JSON is sent to a container that communicates back to the EMR. The raw cTAKES text is also included in the payload so the exact corpus that was processed by cTAKES can be matched with the concept mentions at the proper indexes.
 
 
 ## Install
@@ -18,6 +17,8 @@ $ docker run -d -v ~/cTAKES-Concept-Mention-Parser/data:/usr/src/app/data -t cta
 ```
 
 ## Demonstration
+
+_(slightly out of date)_
 
 ![gif](https://github.com/MatthewVita/cTAKES-Concept-Mention-Parser/blob/master/demo.gif?raw=true)
 

@@ -44,8 +44,7 @@ class CodeExtractor(Thread):
     self.file = file
     self.converted_data = {}
     self.unmapped_concept_mentions = []
-    self.mapped_concept_mentions = {}
-    self.flattened_mapped_concept_mentions = []
+    self.mapped_concept_mentions = []
     self.CONCEPT_MENTION_TYPE = {
       'MEDICATION_MENTION':       'MedicationMention',
       'DISEASE_DISORDER_MENTION': 'DiseaseDisorderMention',
@@ -83,9 +82,10 @@ class CodeExtractor(Thread):
     file = open(self.file + '.json', 'w')
 
     final_structure = {
-      'partitioned': self.mapped_concept_mentions,
-      'flattened': self.flattened_mapped_concept_mentions
+      'raw_text': self.converted_data['xmi:XMI']['cas:Sofa']['@sofaString'],
+      'data': self.mapped_concept_mentions
     }
+
     file.write(json.dumps(final_structure))
     file.close()
 
@@ -122,20 +122,14 @@ class CodeExtractor(Thread):
           'end':   int(unmapped_concept_mention_by_type['@end'])
         })
 
-    self.mapped_concept_mentions[concept_mention_type] = []
     for unmapped_concept_mention in self.unmapped_concept_mentions:
       for concept_mention_for_mapping in concept_mentions_for_mapping:
         if concept_mention_for_mapping['id'] == unmapped_concept_mention['id']:
           mapped_concept_mention = unmapped_concept_mention # start with known data
           mapped_concept_mention['begin'] = concept_mention_for_mapping['begin']
           mapped_concept_mention['end'] = concept_mention_for_mapping['end']
-
-          # Build up a structure that is partitioned by concept type
-          self.mapped_concept_mentions[concept_mention_type].append(mapped_concept_mention)
-
-          # Also include the item in a flattened structure
           mapped_concept_mention['type'] = concept_mention_type
-          self.flattened_mapped_concept_mentions.append(mapped_concept_mention)
+          self.mapped_concept_mentions.append(mapped_concept_mention)
 
 
   def process_and_output_all_concept_mentions(self):
