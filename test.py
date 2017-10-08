@@ -3,20 +3,30 @@ import unittest
 from parser import *
 import sys,os
 
+
 ###
 ### Unit Tests ###
 
-## CodeExtractor class
+class TestCodeExtractor(unittest.TestCase):
+    # CodeExtractor.__init__ CHECK FOR STATE AT CREATION ACROSS VARIOUS SELF VARIABLES
+    def setUp(self):
+        sys.path.append(os.path.realpath('..'))
+        self.CE = CodeExtractor('samples/data.xml')
 
-# CodeExtractor.__init__ CHECK FOR STATE AT CREATION ACROSS VARIOUS SELF VARIABLES
-sys.path.append(os.path.realpath('..'))
-CE = CodeExtractor('samples/data.xml')
-if CE.CONCEPT_MENTION_TYPE['MEDICATION_MENTION'] == 'edicationMention':
-    print("test passed")
+    def testCodeExtractorInit(self):
+        self.assertEqual(self.CE.CONCEPT_MENTION_TYPE['MEDICATION_MENTION'], 'MedicationMention')
 
+    def testCodeExtractorLog(self):
+        value = self.CE.log('Help I am in trouble!')
+        print("this is: " + value)
+        self.assertTrue(type(value) == str)
+        self.assertFalse(len(value) > 10)
 
-# CodeExtractor.log INSPECT COMPLETE MESSAGE VARIABLE FOR EXISTENCE
-## created new variable finalMessage that is returned, is it a string of at least XYZ characters...
+    def testWriteDictToJsonPass(self):
+        x = 1
+
+    def testWriteDictToJsonFail(self):
+        x = 1
 
 # CodeExtractor.convert_xml_to_dict RAISE ERROR
 ##pass in a sample corrupt file, perhaps in /sample or just make a whole test folder?
@@ -28,7 +38,10 @@ if CE.CONCEPT_MENTION_TYPE['MEDICATION_MENTION'] == 'edicationMention':
 
 # CodeExtractor.extract_all_unmapped_concept_mentions ???
 # CodeExtractor.map_unmapped_concept_mentions_by_type ???
+# CodeExtractor.process_and_output_all_concept_mentions ???
 
+if __name__ == '__main__':
+    unittest.main()
 ###
 ### Integration Tests ###
 ###
