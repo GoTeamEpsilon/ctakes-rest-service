@@ -59,7 +59,8 @@ class CodeExtractor(Thread):
 
   # TODO: Bring in actual logger
   def log(self, msg):
-    print('[' + self.getName() + '] ' + str(datetime.datetime.utcnow()) + ' ' + msg)
+    finalMessage = '[' + self.getName() + '] ' + str(datetime.datetime.utcnow()) + ' ' + msg
+    return finalMessage
 
 
   def run(self):
