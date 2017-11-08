@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:refsem="http:///org/apache/ctakes/typesystem/type/refsem.ecore" xmlns:util="http:///org/apache/ctakes/typesystem/type/util.ecore" xmlns:relation="http:///org/apache/ctakes/typesystem/type/relation.ecore" xmlns:structured="http:///org/apache/ctakes/typesystem/type/structured.ecore" xmlns:textspan="http:///org/apache/ctakes/typesystem/type/textspan.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:assertion="http:///org/apache/ctakes/typesystem/type/temporary/assertion.ecore" xmlns:textsem="http:///org/apache/ctakes/typesystem/type/textsem.ecore" xmlns:syntax="http:///org/apache/ctakes/typesystem/type/syntax.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <tcas:DocumentAnnotation xmi:id="1" sofa="6" begin="0" end="1457" language="en"/>
+    <textspan:Segment xmi:id="13" sofa="6" begin="0" end="1457" id="SIMPLE_SEGMENT"/>
+    <textspan:Sentence xmi:id="19" sofa="6" begin="0" end="158" sentenceNumber="0"/>
+    <textspan:Sentence xmi:id="25" sofa="6" begin="159" end="237" sentenceNumber="1"/>
+    <textspan:Sentence xmi:id="31" sofa="6" begin="238" end="268" sentenceNumber="2"/>
+    <textspan:Sentence xmi:id="37" sofa="6" begin="269" end="412" sentenceNumber="3"/>
+    <textspan:Sentence xmi:id="43" sofa="6" begin="413" end="548" sentenceNumber="4"/>
+    <textspan:Sentence xmi:id="49" sofa="6" begin="549" end="605" sentenceNumber="5"/>
+    <textspan:Sentence xmi:id="55" sofa="6" begin="606" end="702" sentenceNumber="6"/>
+    <textspan:Sentence xmi:id="61" sofa="6" begin="703" end="761" sentenceNumber="7"/>
+    <textspan:Sentence xmi:id="67" sofa="6" begin="762" end="820" sentenceNumber="8"/>
+    <textspan:Sentence xmi:id="73" sofa="6" begin="821" end="868" sentenceNumber="9"/>
+    <textspan:Sentence xmi:id="79" sofa="6" begin="869" end="978" sentenceNumber="10"/>
+    <textspan:Sentence xmi:id="85" sofa="6" begin="979" end="1039" sentenceNumber="11"/>
+    <textspan:Sentence xmi:id="91" sofa="6" begin="1040" end="1120" sentenceNumber="12"/>
+    <textspan:Sentence xmi:id="97" sofa="6" begin="1121" end="1173" sentenceNumber="13"/>
+    <textspan:Sentence xmi:id="103" sofa="6" begin="1174" end="1220" sentenceNumber="14"/>
+    <textspan:Sentence xmi:id="109" sofa="6" begin="1221" end="1298" sentenceNumber="15"/>
+    <textspan:Sentence xmi:id="115" sofa="6" begin="1299" end="1375" sentenceNumber="16"/>
+    <textspan:Sentence xmi:id="121" sofa="6" begin="1376" end="1457" sentenceNumber="17"/>
+    <syntax:WordToken xmi:id="127" sofa="6" begin="0" end="3" tokenNumber="0" normalizedForm="Mr." partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="139" sofa="6" begin="4" end="9" tokenNumber="1" normalizedForm="Smith" partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="151" sofa="6" begin="10" end="12" tokenNumber="2" normalizedForm="is" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="163" sofa="6" begin="13" end="14" tokenNumber="3" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="175" sofa="6" begin="18" end="22" tokenNumber="6" normalizedForm="year" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="187" sofa="6" begin="23" end="26" tokenNumber="8" normalizedForm="old" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="199" sofa="6" begin="27" end="36" tokenNumber="9" normalizedForm="gentleman" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="211" sofa="6" begin="37" end="45" tokenNumber="10" normalizedForm="formally" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="223" sofa="6" begin="46" end="54" tokenNumber="11" normalizedForm="followed" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="235" sofa="6" begin="55" end="57" tokenNumber="12" normalizedForm="at" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="247" sofa="6" begin="58" end="66" tokenNumber="13" normalizedForm="Carolina" partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="259" sofa="6" begin="67" end="74" tokenNumber="14" normalizedForm="Premier" partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="271" sofa="6" begin="75" end="78" tokenNumber="15" normalizedForm="who" partOfSpeech="WP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="283" sofa="6" begin="79" end="87" tokenNumber="16" normalizedForm="presents" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="295" sofa="6" begin="88" end="90" tokenNumber="17" normalizedForm="to" partOfSpeech="TO" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="307" sofa="6" begin="91" end="97" tokenNumber="18" normalizedForm="obtain" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="319" sofa="6" begin="98" end="99" tokenNumber="19" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="331" sofa="6" begin="100" end="103" tokenNumber="20" normalizedForm="new" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="343" sofa="6" begin="104" end="111" tokenNumber="21" normalizedForm="primary" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="355" sofa="6" begin="112" end="116" tokenNumber="22" normalizedForm="care" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="367" sofa="6" begin="117" end="126" tokenNumber="23" normalizedForm="physician" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="379" sofa="6" begin="127" end="136" tokenNumber="24" normalizedForm="secondary" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="391" sofa="6" begin="137" end="139" tokenNumber="25" normalizedForm="to" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="403" sofa="6" begin="140" end="149" tokenNumber="26" normalizedForm="insurance" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="415" sofa="6" begin="150" end="157" tokenNumber="27" normalizedForm="changes" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="427" sofa="6" begin="159" end="161" tokenNumber="29" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="439" sofa="6" begin="162" end="165" tokenNumber="30" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="451" sofa="6" begin="166" end="167" tokenNumber="31" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="463" sofa="6" begin="168" end="172" tokenNumber="32" normalizedForm="past" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="475" sofa="6" begin="173" end="180" tokenNumber="33" normalizedForm="medical" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="487" sofa="6" begin="181" end="188" tokenNumber="34" normalizedForm="history" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="499" sofa="6" begin="189" end="200" tokenNumber="35" normalizedForm="significant" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="511" sofa="6" begin="201" end="204" tokenNumber="36" normalizedForm="for" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="523" sofa="6" begin="205" end="206" tokenNumber="37" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="535" sofa="6" begin="207" end="217" tokenNumber="38" normalizedForm="myocardial" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="547" sofa="6" begin="218" end="228" tokenNumber="39" normalizedForm="infarction" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="559" sofa="6" begin="229" end="231" tokenNumber="40" normalizedForm="in" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="571" sofa="6" begin="238" end="241" tokenNumber="43" normalizedForm="His" partOfSpeech="PRP$" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="583" sofa="6" begin="242" end="253" tokenNumber="44" normalizedForm="cholesterol" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="595" sofa="6" begin="254" end="257" tokenNumber="45" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="607" sofa="6" begin="258" end="262" tokenNumber="46" normalizedForm="been" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="619" sofa="6" begin="263" end="267" tokenNumber="47" normalizedForm="fine" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="631" sofa="6" begin="269" end="284" tokenNumber="49" normalizedForm="Catheterization" partOfSpeech="NN" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="643" sofa="6" begin="285" end="291" tokenNumber="50" normalizedForm="showed" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="655" sofa="6" begin="292" end="293" tokenNumber="51" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="667" sofa="6" begin="294" end="302" tokenNumber="52" normalizedForm="possible" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="679" sofa="6" begin="304" end="308" tokenNumber="54" normalizedForm="kink" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="691" sofa="6" begin="310" end="312" tokenNumber="56" normalizedForm="in" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="703" sofa="6" begin="313" end="316" tokenNumber="57" normalizedForm="one" partOfSpeech="CD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="715" sofa="6" begin="317" end="319" tokenNumber="58" normalizedForm="of" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="727" sofa="6" begin="320" end="323" tokenNumber="59" normalizedForm="his" partOfSpeech="PRP$" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="739" sofa="6" begin="324" end="331" tokenNumber="60" normalizedForm="vessels" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="751" sofa="6" begin="332" end="335" tokenNumber="61" normalizedForm="and" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="763" sofa="6" begin="336" end="338" tokenNumber="62" normalizedForm="it" partOfSpeech="PRP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="775" sofa="6" begin="339" end="342" tokenNumber="63" normalizedForm="was" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="787" sofa="6" begin="343" end="350" tokenNumber="64" normalizedForm="thought" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="799" sofa="6" begin="351" end="355" tokenNumber="65" normalizedForm="that" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="811" sofa="6" begin="356" end="358" tokenNumber="66" normalizedForm="he" partOfSpeech="PRP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="823" sofa="6" begin="359" end="362" tokenNumber="67" normalizedForm="had" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="835" sofa="6" begin="363" end="364" tokenNumber="68" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="847" sofa="6" begin="365" end="373" tokenNumber="69" normalizedForm="possible" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="859" sofa="6" begin="375" end="379" tokenNumber="71" normalizedForm="eddy" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="871" sofa="6" begin="381" end="383" tokenNumber="73" normalizedForm="of" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="883" sofa="6" begin="384" end="391" tokenNumber="74" normalizedForm="current" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="895" sofa="6" begin="392" end="397" tokenNumber="75" normalizedForm="which" partOfSpeech="WDT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="907" sofa="6" begin="398" end="401" tokenNumber="76" normalizedForm="led" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="919" sofa="6" begin="402" end="404" tokenNumber="77" normalizedForm="to" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="931" sofa="6" begin="405" end="406" tokenNumber="78" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="943" sofa="6" begin="407" end="411" tokenNumber="79" normalizedForm="clot" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="955" sofa="6" begin="413" end="415" tokenNumber="81" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="967" sofa="6" begin="416" end="419" tokenNumber="82" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="979" sofa="6" begin="420" end="424" tokenNumber="83" normalizedForm="been" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="991" sofa="6" begin="425" end="427" tokenNumber="84" normalizedForm="on" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1003" sofa="6" begin="428" end="436" tokenNumber="85" normalizedForm="Coumadin" partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1015" sofa="6" begin="437" end="442" tokenNumber="86" normalizedForm="since" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1027" sofa="6" begin="443" end="447" tokenNumber="87" normalizedForm="then" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1039" sofa="6" begin="448" end="450" tokenNumber="88" normalizedForm="as" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1051" sofa="6" begin="451" end="455" tokenNumber="89" normalizedForm="well" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1063" sofa="6" begin="456" end="458" tokenNumber="90" normalizedForm="as" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1075" sofa="6" begin="459" end="460" tokenNumber="91" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1087" sofa="6" begin="461" end="468" tokenNumber="92" normalizedForm="calcium" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1099" sofa="6" begin="469" end="476" tokenNumber="93" normalizedForm="channel" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1111" sofa="6" begin="477" end="484" tokenNumber="94" normalizedForm="blocker" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1123" sofa="6" begin="485" end="489" tokenNumber="95" normalizedForm="with" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1135" sofa="6" begin="490" end="493" tokenNumber="96" normalizedForm="the" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1147" sofa="6" begin="494" end="501" tokenNumber="97" normalizedForm="thought" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1159" sofa="6" begin="502" end="506" tokenNumber="98" normalizedForm="that" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1171" sofa="6" begin="507" end="512" tokenNumber="99" normalizedForm="there" partOfSpeech="EX" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1183" sofa="6" begin="513" end="516" tokenNumber="100" normalizedForm="may" partOfSpeech="MD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1195" sofa="6" begin="517" end="521" tokenNumber="101" normalizedForm="have" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1207" sofa="6" begin="522" end="526" tokenNumber="102" normalizedForm="been" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1219" sofa="6" begin="527" end="528" tokenNumber="103" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1231" sofa="6" begin="529" end="541" tokenNumber="104" normalizedForm="superimposed" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1243" sofa="6" begin="542" end="547" tokenNumber="105" normalizedForm="spasm" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1255" sofa="6" begin="549" end="551" tokenNumber="107" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1267" sofa="6" begin="552" end="555" tokenNumber="108" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1279" sofa="6" begin="556" end="559" tokenNumber="109" normalizedForm="had" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1291" sofa="6" begin="560" end="567" tokenNumber="110" normalizedForm="several" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1303" sofa="6" begin="568" end="580" tokenNumber="111" normalizedForm="unremarkable" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1315" sofa="6" begin="581" end="587" tokenNumber="112" normalizedForm="stress" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1327" sofa="6" begin="588" end="593" tokenNumber="113" normalizedForm="tests" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1339" sofa="6" begin="594" end="599" tokenNumber="114" normalizedForm="since" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1351" sofa="6" begin="600" end="604" tokenNumber="115" normalizedForm="then" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1363" sofa="6" begin="606" end="608" tokenNumber="117" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1375" sofa="6" begin="609" end="614" tokenNumber="118" normalizedForm="works" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1387" sofa="6" begin="615" end="618" tokenNumber="119" normalizedForm="out" partOfSpeech="RP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1399" sofa="6" begin="619" end="621" tokenNumber="120" normalizedForm="on" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1411" sofa="6" begin="622" end="623" tokenNumber="121" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1423" sofa="6" begin="624" end="630" tokenNumber="122" normalizedForm="Nordic" partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1435" sofa="6" begin="631" end="636" tokenNumber="124" normalizedForm="Track" partOfSpeech="NNP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1447" sofa="6" begin="637" end="642" tokenNumber="125" normalizedForm="three" partOfSpeech="CD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1459" sofa="6" begin="643" end="648" tokenNumber="126" normalizedForm="times" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1471" sofa="6" begin="649" end="650" tokenNumber="127" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1483" sofa="6" begin="651" end="655" tokenNumber="128" normalizedForm="week" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1495" sofa="6" begin="656" end="663" tokenNumber="129" normalizedForm="without" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1507" sofa="6" begin="664" end="667" tokenNumber="130" normalizedForm="any" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1519" sofa="6" begin="668" end="673" tokenNumber="131" normalizedForm="chest" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1531" sofa="6" begin="674" end="678" tokenNumber="132" normalizedForm="pain" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1543" sofa="6" begin="679" end="681" tokenNumber="133" normalizedForm="or" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1555" sofa="6" begin="682" end="691" tokenNumber="134" normalizedForm="shortness" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1567" sofa="6" begin="692" end="694" tokenNumber="135" normalizedForm="of" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1579" sofa="6" begin="695" end="701" tokenNumber="136" normalizedForm="breath" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1591" sofa="6" begin="703" end="705" tokenNumber="138" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1603" sofa="6" begin="706" end="709" tokenNumber="139" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1615" sofa="6" begin="710" end="711" tokenNumber="140" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1627" sofa="6" begin="712" end="719" tokenNumber="141" normalizedForm="history" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1639" sofa="6" begin="720" end="722" tokenNumber="142" normalizedForm="of" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1651" sofa="6" begin="723" end="731" tokenNumber="143" normalizedForm="possible" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1663" sofa="6" begin="732" end="738" tokenNumber="144" normalizedForm="peptic" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1675" sofa="6" begin="739" end="744" tokenNumber="145" normalizedForm="ulcer" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1687" sofa="6" begin="745" end="752" tokenNumber="146" normalizedForm="disease" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1699" sofa="6" begin="753" end="755" tokenNumber="147" normalizedForm="in" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1711" sofa="6" begin="762" end="764" tokenNumber="150" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1723" sofa="6" begin="765" end="768" tokenNumber="151" normalizedForm="was" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1735" sofa="6" begin="769" end="776" tokenNumber="152" normalizedForm="treated" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1747" sofa="6" begin="777" end="781" tokenNumber="153" normalizedForm="with" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1759" sofa="6" begin="782" end="784" tokenNumber="154" normalizedForm="H2" partOfSpeech="NN" capitalization="1" numPosition="3"/>
+    <syntax:WordToken xmi:id="1771" sofa="6" begin="785" end="793" tokenNumber="155" normalizedForm="blockers" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1783" sofa="6" begin="794" end="797" tokenNumber="156" normalizedForm="and" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1795" sofa="6" begin="798" end="801" tokenNumber="157" normalizedForm="his" partOfSpeech="PRP$" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1807" sofa="6" begin="802" end="810" tokenNumber="158" normalizedForm="symptoms" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1819" sofa="6" begin="811" end="819" tokenNumber="159" normalizedForm="resolved" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1831" sofa="6" begin="821" end="823" tokenNumber="161" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1843" sofa="6" begin="824" end="827" tokenNumber="162" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1855" sofa="6" begin="828" end="833" tokenNumber="163" normalizedForm="never" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1867" sofa="6" begin="834" end="837" tokenNumber="164" normalizedForm="had" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1879" sofa="6" begin="838" end="841" tokenNumber="165" normalizedForm="any" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1891" sofa="6" begin="842" end="850" tokenNumber="166" normalizedForm="bleeding" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1903" sofa="6" begin="851" end="853" tokenNumber="167" normalizedForm="to" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1915" sofa="6" begin="854" end="857" tokenNumber="168" normalizedForm="his" partOfSpeech="PRP$" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1927" sofa="6" begin="858" end="867" tokenNumber="169" normalizedForm="knowledge" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1939" sofa="6" begin="869" end="871" tokenNumber="171" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="1951" sofa="6" begin="872" end="875" tokenNumber="172" normalizedForm="had" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1963" sofa="6" begin="876" end="877" tokenNumber="173" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1975" sofa="6" begin="878" end="884" tokenNumber="174" normalizedForm="hernia" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1987" sofa="6" begin="885" end="891" tokenNumber="175" normalizedForm="repair" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="1999" sofa="6" begin="892" end="903" tokenNumber="176" normalizedForm="bilaterally" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2011" sofa="6" begin="904" end="906" tokenNumber="177" normalizedForm="in" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2023" sofa="6" begin="912" end="915" tokenNumber="179" normalizedForm="and" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2035" sofa="6" begin="916" end="923" tokenNumber="180" normalizedForm="surgery" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2047" sofa="6" begin="924" end="927" tokenNumber="181" normalizedForm="for" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2059" sofa="6" begin="928" end="929" tokenNumber="182" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2071" sofa="6" begin="930" end="935" tokenNumber="183" normalizedForm="right" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2083" sofa="6" begin="936" end="940" tokenNumber="184" normalizedForm="knee" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2095" sofa="6" begin="941" end="945" tokenNumber="185" normalizedForm="cyst" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2107" sofa="6" begin="946" end="948" tokenNumber="186" normalizedForm="in" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2119" sofa="6" begin="955" end="958" tokenNumber="189" normalizedForm="all" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2131" sofa="6" begin="959" end="961" tokenNumber="190" normalizedForm="of" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2143" sofa="6" begin="962" end="967" tokenNumber="191" normalizedForm="which" partOfSpeech="WDT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2155" sofa="6" begin="968" end="972" tokenNumber="192" normalizedForm="went" partOfSpeech="VBD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2167" sofa="6" begin="973" end="977" tokenNumber="193" normalizedForm="well" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2179" sofa="6" begin="979" end="981" tokenNumber="195" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="2191" sofa="6" begin="982" end="986" tokenNumber="196" normalizedForm="also" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2203" sofa="6" begin="987" end="990" tokenNumber="197" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2215" sofa="6" begin="991" end="996" tokenNumber="198" normalizedForm="about" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2227" sofa="6" begin="997" end="998" tokenNumber="199" normalizedForm="a" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2239" sofa="6" begin="999" end="1003" tokenNumber="200" normalizedForm="year" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2251" sofa="6" begin="1004" end="1008" tokenNumber="201" normalizedForm="long" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2263" sofa="6" begin="1009" end="1016" tokenNumber="202" normalizedForm="history" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2275" sofa="6" begin="1017" end="1019" tokenNumber="203" normalizedForm="of" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2287" sofa="6" begin="1020" end="1025" tokenNumber="204" normalizedForm="right" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2299" sofa="6" begin="1026" end="1033" tokenNumber="205" normalizedForm="buttock" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2311" sofa="6" begin="1034" end="1038" tokenNumber="206" normalizedForm="pain" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2323" sofa="6" begin="1040" end="1044" tokenNumber="208" normalizedForm="This" partOfSpeech="DT" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="2335" sofa="6" begin="1045" end="1052" tokenNumber="209" normalizedForm="happens" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2347" sofa="6" begin="1053" end="1057" tokenNumber="210" normalizedForm="only" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2359" sofa="6" begin="1058" end="1062" tokenNumber="211" normalizedForm="when" partOfSpeech="WRB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2371" sofa="6" begin="1063" end="1065" tokenNumber="212" normalizedForm="he" partOfSpeech="PRP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2383" sofa="6" begin="1066" end="1068" tokenNumber="213" normalizedForm="is" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2395" sofa="6" begin="1069" end="1076" tokenNumber="214" normalizedForm="sitting" partOfSpeech="VBG" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2407" sofa="6" begin="1077" end="1080" tokenNumber="215" normalizedForm="for" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2419" sofa="6" begin="1081" end="1085" tokenNumber="216" normalizedForm="some" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2431" sofa="6" begin="1086" end="1090" tokenNumber="217" normalizedForm="time" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2443" sofa="6" begin="1091" end="1094" tokenNumber="218" normalizedForm="and" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2455" sofa="6" begin="1095" end="1099" tokenNumber="219" normalizedForm="does" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2467" sofa="6" begin="1100" end="1103" tokenNumber="220" normalizedForm="not" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2479" sofa="6" begin="1104" end="1110" tokenNumber="221" normalizedForm="change" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2491" sofa="6" begin="1111" end="1119" tokenNumber="222" normalizedForm="position" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2503" sofa="6" begin="1121" end="1123" tokenNumber="224" normalizedForm="It" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="2515" sofa="6" begin="1124" end="1128" tokenNumber="225" normalizedForm="does" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2527" sofa="6" begin="1129" end="1132" tokenNumber="226" normalizedForm="not" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2539" sofa="6" begin="1133" end="1139" tokenNumber="227" normalizedForm="happen" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2551" sofa="6" begin="1140" end="1144" tokenNumber="228" normalizedForm="when" partOfSpeech="WRB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2563" sofa="6" begin="1145" end="1147" tokenNumber="229" normalizedForm="he" partOfSpeech="PRP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2575" sofa="6" begin="1148" end="1150" tokenNumber="230" normalizedForm="is" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2587" sofa="6" begin="1151" end="1158" tokenNumber="231" normalizedForm="walking" partOfSpeech="VBG" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2599" sofa="6" begin="1159" end="1161" tokenNumber="232" normalizedForm="or" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2611" sofa="6" begin="1162" end="1172" tokenNumber="233" normalizedForm="exercising" partOfSpeech="VBG" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2623" sofa="6" begin="1174" end="1176" tokenNumber="235" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="2635" sofa="6" begin="1177" end="1184" tokenNumber="236" normalizedForm="wonders" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2647" sofa="6" begin="1185" end="1187" tokenNumber="237" normalizedForm="if" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2659" sofa="6" begin="1188" end="1190" tokenNumber="238" normalizedForm="it" partOfSpeech="PRP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2671" sofa="6" begin="1191" end="1196" tokenNumber="239" normalizedForm="might" partOfSpeech="MD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2683" sofa="6" begin="1197" end="1199" tokenNumber="240" normalizedForm="be" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2695" sofa="6" begin="1200" end="1210" tokenNumber="241" normalizedForm="pyriformis" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2707" sofa="6" begin="1211" end="1219" tokenNumber="242" normalizedForm="syndrome" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2719" sofa="6" begin="1221" end="1223" tokenNumber="244" normalizedForm="If" partOfSpeech="IN" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="2731" sofa="6" begin="1224" end="1226" tokenNumber="245" normalizedForm="he" partOfSpeech="PRP" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2743" sofa="6" begin="1227" end="1234" tokenNumber="246" normalizedForm="changes" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2755" sofa="6" begin="1235" end="1244" tokenNumber="247" normalizedForm="positions" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2767" sofa="6" begin="1245" end="1255" tokenNumber="248" normalizedForm="frequently" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2779" sofa="6" begin="1256" end="1258" tokenNumber="249" normalizedForm="or" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2791" sofa="6" begin="1259" end="1268" tokenNumber="250" normalizedForm="stretches" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2803" sofa="6" begin="1269" end="1272" tokenNumber="251" normalizedForm="his" partOfSpeech="PRP$" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2815" sofa="6" begin="1273" end="1277" tokenNumber="252" normalizedForm="legs" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2827" sofa="6" begin="1279" end="1283" tokenNumber="254" normalizedForm="this" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2839" sofa="6" begin="1284" end="1289" tokenNumber="255" normalizedForm="seems" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2851" sofa="6" begin="1290" end="1292" tokenNumber="256" normalizedForm="to" partOfSpeech="TO" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2863" sofa="6" begin="1293" end="1297" tokenNumber="257" normalizedForm="help" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2875" sofa="6" begin="1299" end="1301" tokenNumber="259" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="2887" sofa="6" begin="1302" end="1305" tokenNumber="260" normalizedForm="has" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2899" sofa="6" begin="1306" end="1308" tokenNumber="261" normalizedForm="no" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2911" sofa="6" begin="1309" end="1314" tokenNumber="262" normalizedForm="acute" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2923" sofa="6" begin="1315" end="1325" tokenNumber="263" normalizedForm="complaints" partOfSpeech="NNS" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2935" sofa="6" begin="1326" end="1331" tokenNumber="264" normalizedForm="today" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2947" sofa="6" begin="1332" end="1335" tokenNumber="265" normalizedForm="and" partOfSpeech="CC" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2959" sofa="6" begin="1336" end="1338" tokenNumber="266" normalizedForm="is" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2971" sofa="6" begin="1339" end="1343" tokenNumber="267" normalizedForm="here" partOfSpeech="RB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2983" sofa="6" begin="1344" end="1346" tokenNumber="268" normalizedForm="to" partOfSpeech="TO" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="2995" sofa="6" begin="1347" end="1350" tokenNumber="269" normalizedForm="get" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3007" sofa="6" begin="1351" end="1358" tokenNumber="270" normalizedForm="plugged" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3019" sofa="6" begin="1359" end="1363" tokenNumber="271" normalizedForm="into" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3031" sofa="6" begin="1364" end="1367" tokenNumber="272" normalizedForm="the" partOfSpeech="DT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3043" sofa="6" begin="1368" end="1374" tokenNumber="273" normalizedForm="system" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3055" sofa="6" begin="1376" end="1378" tokenNumber="275" normalizedForm="He" partOfSpeech="PRP" capitalization="1" numPosition="0"/>
+    <syntax:WordToken xmi:id="3067" sofa="6" begin="1379" end="1383" tokenNumber="276" normalizedForm="does" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3079" sofa="6" begin="1384" end="1390" tokenNumber="277" normalizedForm="wonder" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3091" sofa="6" begin="1391" end="1393" tokenNumber="278" normalizedForm="if" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3103" sofa="6" begin="1394" end="1399" tokenNumber="279" normalizedForm="there" partOfSpeech="EX" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3115" sofa="6" begin="1400" end="1402" tokenNumber="280" normalizedForm="is" partOfSpeech="VBZ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3127" sofa="6" begin="1403" end="1411" tokenNumber="281" normalizedForm="anything" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3139" sofa="6" begin="1412" end="1416" tokenNumber="282" normalizedForm="else" partOfSpeech="JJ" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3151" sofa="6" begin="1417" end="1421" tokenNumber="283" normalizedForm="that" partOfSpeech="WDT" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3163" sofa="6" begin="1422" end="1425" tokenNumber="284" normalizedForm="can" partOfSpeech="MD" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3175" sofa="6" begin="1426" end="1428" tokenNumber="285" normalizedForm="be" partOfSpeech="VB" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3187" sofa="6" begin="1429" end="1433" tokenNumber="286" normalizedForm="done" partOfSpeech="VBN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3199" sofa="6" begin="1434" end="1439" tokenNumber="287" normalizedForm="about" partOfSpeech="IN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3211" sofa="6" begin="1440" end="1443" tokenNumber="288" normalizedForm="his" partOfSpeech="PRP$" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3223" sofa="6" begin="1444" end="1451" tokenNumber="289" normalizedForm="buttock" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:WordToken xmi:id="3235" sofa="6" begin="1452" end="1456" tokenNumber="290" normalizedForm="pain" partOfSpeech="NN" capitalization="0" numPosition="0"/>
+    <syntax:NumToken xmi:id="3247" sofa="6" begin="15" end="17" tokenNumber="4" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="3256" sofa="6" begin="232" end="236" tokenNumber="41" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="3265" sofa="6" begin="756" end="760" tokenNumber="148" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="3274" sofa="6" begin="907" end="911" tokenNumber="178" partOfSpeech="CD" numType="1"/>
+    <syntax:NumToken xmi:id="3283" sofa="6" begin="949" end="953" tokenNumber="187" partOfSpeech="CD" numType="1"/>
+    <syntax:PunctuationToken xmi:id="3292" sofa="6" begin="17" end="18" tokenNumber="5" partOfSpeech="HYPH"/>
+    <syntax:PunctuationToken xmi:id="3300" sofa="6" begin="22" end="23" tokenNumber="7" partOfSpeech="HYPH"/>
+    <syntax:PunctuationToken xmi:id="3308" sofa="6" begin="157" end="158" tokenNumber="28" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3316" sofa="6" begin="236" end="237" tokenNumber="42" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3324" sofa="6" begin="267" end="268" tokenNumber="48" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3332" sofa="6" begin="303" end="304" tokenNumber="53" partOfSpeech="``"/>
+    <syntax:PunctuationToken xmi:id="3340" sofa="6" begin="308" end="309" tokenNumber="55" partOfSpeech="''"/>
+    <syntax:PunctuationToken xmi:id="3348" sofa="6" begin="374" end="375" tokenNumber="70" partOfSpeech="``"/>
+    <syntax:PunctuationToken xmi:id="3356" sofa="6" begin="379" end="380" tokenNumber="72" partOfSpeech="''"/>
+    <syntax:PunctuationToken xmi:id="3364" sofa="6" begin="411" end="412" tokenNumber="80" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3372" sofa="6" begin="547" end="548" tokenNumber="106" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3380" sofa="6" begin="604" end="605" tokenNumber="116" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3388" sofa="6" begin="630" end="631" tokenNumber="123" partOfSpeech="HYPH"/>
+    <syntax:PunctuationToken xmi:id="3396" sofa="6" begin="701" end="702" tokenNumber="137" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3404" sofa="6" begin="760" end="761" tokenNumber="149" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3412" sofa="6" begin="819" end="820" tokenNumber="160" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3420" sofa="6" begin="867" end="868" tokenNumber="170" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3428" sofa="6" begin="953" end="954" tokenNumber="188" partOfSpeech=","/>
+    <syntax:PunctuationToken xmi:id="3436" sofa="6" begin="977" end="978" tokenNumber="194" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3444" sofa="6" begin="1038" end="1039" tokenNumber="207" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3452" sofa="6" begin="1119" end="1120" tokenNumber="223" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3460" sofa="6" begin="1172" end="1173" tokenNumber="234" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3468" sofa="6" begin="1219" end="1220" tokenNumber="243" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3476" sofa="6" begin="1277" end="1278" tokenNumber="253" partOfSpeech=","/>
+    <syntax:PunctuationToken xmi:id="3484" sofa="6" begin="1297" end="1298" tokenNumber="258" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3492" sofa="6" begin="1374" end="1375" tokenNumber="274" partOfSpeech="."/>
+    <syntax:PunctuationToken xmi:id="3500" sofa="6" begin="1456" end="1457" tokenNumber="291" partOfSpeech="."/>
+    <syntax:NP xmi:id="3508" sofa="6" begin="0" end="9" chunkType="NP"/>
+    <syntax:NP xmi:id="3513" sofa="6" begin="13" end="36" chunkType="NP"/>
+    <syntax:NP xmi:id="3518" sofa="6" begin="58" end="78" chunkType="NP"/>
+    <syntax:NP xmi:id="3523" sofa="6" begin="75" end="78" chunkType="NP"/>
+    <syntax:NP xmi:id="3528" sofa="6" begin="98" end="126" chunkType="NP"/>
+    <syntax:NP xmi:id="3533" sofa="6" begin="140" end="157" chunkType="NP"/>
+    <syntax:NP xmi:id="3538" sofa="6" begin="159" end="161" chunkType="NP"/>
+    <syntax:NP xmi:id="3543" sofa="6" begin="166" end="188" chunkType="NP"/>
+    <syntax:NP xmi:id="3548" sofa="6" begin="205" end="236" chunkType="NP"/>
+    <syntax:NP xmi:id="3553" sofa="6" begin="232" end="236" chunkType="NP"/>
+    <syntax:NP xmi:id="3558" sofa="6" begin="238" end="253" chunkType="NP"/>
+    <syntax:NP xmi:id="3563" sofa="6" begin="269" end="284" chunkType="NP"/>
+    <syntax:NP xmi:id="3568" sofa="6" begin="292" end="308" chunkType="NP"/>
+    <syntax:NP xmi:id="3573" sofa="6" begin="313" end="331" chunkType="NP"/>
+    <syntax:NP xmi:id="3578" sofa="6" begin="320" end="331" chunkType="NP"/>
+    <syntax:NP xmi:id="3583" sofa="6" begin="336" end="338" chunkType="NP"/>
+    <syntax:NP xmi:id="3588" sofa="6" begin="356" end="358" chunkType="NP"/>
+    <syntax:NP xmi:id="3593" sofa="6" begin="363" end="379" chunkType="NP"/>
+    <syntax:NP xmi:id="3598" sofa="6" begin="384" end="397" chunkType="NP"/>
+    <syntax:NP xmi:id="3603" sofa="6" begin="392" end="397" chunkType="NP"/>
+    <syntax:NP xmi:id="3608" sofa="6" begin="405" end="411" chunkType="NP"/>
+    <syntax:NP xmi:id="3613" sofa="6" begin="413" end="415" chunkType="NP"/>
+    <syntax:NP xmi:id="3618" sofa="6" begin="428" end="436" chunkType="NP"/>
+    <syntax:NP xmi:id="3623" sofa="6" begin="459" end="501" chunkType="NP"/>
+    <syntax:NP xmi:id="3628" sofa="6" begin="490" end="501" chunkType="NP"/>
+    <syntax:NP xmi:id="3633" sofa="6" begin="507" end="512" chunkType="NP"/>
+    <syntax:NP xmi:id="3638" sofa="6" begin="527" end="547" chunkType="NP"/>
+    <syntax:NP xmi:id="3643" sofa="6" begin="549" end="551" chunkType="NP"/>
+    <syntax:NP xmi:id="3648" sofa="6" begin="560" end="604" chunkType="NP"/>
+    <syntax:NP xmi:id="3653" sofa="6" begin="600" end="604" chunkType="NP"/>
+    <syntax:NP xmi:id="3658" sofa="6" begin="606" end="608" chunkType="NP"/>
+    <syntax:NP xmi:id="3663" sofa="6" begin="622" end="630" chunkType="NP"/>
+    <syntax:NP xmi:id="3668" sofa="6" begin="631" end="655" chunkType="NP"/>
+    <syntax:NP xmi:id="3673" sofa="6" begin="637" end="648" chunkType="NP"/>
+    <syntax:NP xmi:id="3678" sofa="6" begin="649" end="678" chunkType="NP"/>
+    <syntax:NP xmi:id="3683" sofa="6" begin="664" end="678" chunkType="NP"/>
+    <syntax:NP xmi:id="3688" sofa="6" begin="682" end="701" chunkType="NP"/>
+    <syntax:NP xmi:id="3693" sofa="6" begin="703" end="705" chunkType="NP"/>
+    <syntax:NP xmi:id="3698" sofa="6" begin="710" end="760" chunkType="NP"/>
+    <syntax:NP xmi:id="3703" sofa="6" begin="723" end="752" chunkType="NP"/>
+    <syntax:NP xmi:id="3708" sofa="6" begin="756" end="760" chunkType="NP"/>
+    <syntax:NP xmi:id="3713" sofa="6" begin="762" end="764" chunkType="NP"/>
+    <syntax:NP xmi:id="3718" sofa="6" begin="782" end="793" chunkType="NP"/>
+    <syntax:NP xmi:id="3723" sofa="6" begin="798" end="810" chunkType="NP"/>
+    <syntax:NP xmi:id="3728" sofa="6" begin="821" end="823" chunkType="NP"/>
+    <syntax:NP xmi:id="3733" sofa="6" begin="838" end="867" chunkType="NP"/>
+    <syntax:NP xmi:id="3738" sofa="6" begin="854" end="867" chunkType="NP"/>
+    <syntax:NP xmi:id="3743" sofa="6" begin="869" end="871" chunkType="NP"/>
+    <syntax:NP xmi:id="3748" sofa="6" begin="876" end="891" chunkType="NP"/>
+    <syntax:NP xmi:id="3753" sofa="6" begin="907" end="911" chunkType="NP"/>
+    <syntax:NP xmi:id="3758" sofa="6" begin="916" end="953" chunkType="NP"/>
+    <syntax:NP xmi:id="3763" sofa="6" begin="928" end="945" chunkType="NP"/>
+    <syntax:NP xmi:id="3768" sofa="6" begin="949" end="953" chunkType="NP"/>
+    <syntax:NP xmi:id="3773" sofa="6" begin="955" end="967" chunkType="NP"/>
+    <syntax:NP xmi:id="3778" sofa="6" begin="962" end="967" chunkType="NP"/>
+    <syntax:NP xmi:id="3783" sofa="6" begin="979" end="981" chunkType="NP"/>
+    <syntax:NP xmi:id="3788" sofa="6" begin="991" end="1038" chunkType="NP"/>
+    <syntax:NP xmi:id="3793" sofa="6" begin="1020" end="1038" chunkType="NP"/>
+    <syntax:NP xmi:id="3798" sofa="6" begin="1040" end="1044" chunkType="NP"/>
+    <syntax:NP xmi:id="3803" sofa="6" begin="1063" end="1065" chunkType="NP"/>
+    <syntax:NP xmi:id="3808" sofa="6" begin="1081" end="1090" chunkType="NP"/>
+    <syntax:NP xmi:id="3813" sofa="6" begin="1111" end="1119" chunkType="NP"/>
+    <syntax:NP xmi:id="3818" sofa="6" begin="1121" end="1123" chunkType="NP"/>
+    <syntax:NP xmi:id="3823" sofa="6" begin="1145" end="1147" chunkType="NP"/>
+    <syntax:NP xmi:id="3828" sofa="6" begin="1174" end="1176" chunkType="NP"/>
+    <syntax:NP xmi:id="3833" sofa="6" begin="1188" end="1190" chunkType="NP"/>
+    <syntax:NP xmi:id="3838" sofa="6" begin="1200" end="1219" chunkType="NP"/>
+    <syntax:NP xmi:id="3843" sofa="6" begin="1224" end="1226" chunkType="NP"/>
+    <syntax:NP xmi:id="3848" sofa="6" begin="1235" end="1244" chunkType="NP"/>
+    <syntax:NP xmi:id="3853" sofa="6" begin="1259" end="1277" chunkType="NP"/>
+    <syntax:NP xmi:id="3858" sofa="6" begin="1269" end="1277" chunkType="NP"/>
+    <syntax:NP xmi:id="3863" sofa="6" begin="1279" end="1283" chunkType="NP"/>
+    <syntax:NP xmi:id="3868" sofa="6" begin="1299" end="1301" chunkType="NP"/>
+    <syntax:NP xmi:id="3873" sofa="6" begin="1306" end="1331" chunkType="NP"/>
+    <syntax:NP xmi:id="3878" sofa="6" begin="1326" end="1331" chunkType="NP"/>
+    <syntax:NP xmi:id="3883" sofa="6" begin="1364" end="1374" chunkType="NP"/>
+    <syntax:NP xmi:id="3888" sofa="6" begin="1376" end="1378" chunkType="NP"/>
+    <syntax:NP xmi:id="3893" sofa="6" begin="1394" end="1399" chunkType="NP"/>
+    <syntax:NP xmi:id="3898" sofa="6" begin="1403" end="1421" chunkType="NP"/>
+    <syntax:NP xmi:id="3903" sofa="6" begin="1417" end="1421" chunkType="NP"/>
+    <syntax:NP xmi:id="3908" sofa="6" begin="1440" end="1456" chunkType="NP"/>
+    <syntax:VP xmi:id="3913" sofa="6" begin="10" end="12" chunkType="VP"/>
+    <syntax:VP xmi:id="3918" sofa="6" begin="37" end="54" chunkType="VP"/>
+    <syntax:VP xmi:id="3923" sofa="6" begin="79" end="97" chunkType="VP"/>
+    <syntax:VP xmi:id="3928" sofa="6" begin="162" end="165" chunkType="VP"/>
+    <syntax:VP xmi:id="3933" sofa="6" begin="254" end="262" chunkType="VP"/>
+    <syntax:VP xmi:id="3938" sofa="6" begin="285" end="291" chunkType="VP"/>
+    <syntax:VP xmi:id="3943" sofa="6" begin="339" end="350" chunkType="VP"/>
+    <syntax:VP xmi:id="3948" sofa="6" begin="359" end="362" chunkType="VP"/>
+    <syntax:VP xmi:id="3953" sofa="6" begin="398" end="401" chunkType="VP"/>
+    <syntax:VP xmi:id="3958" sofa="6" begin="416" end="424" chunkType="VP"/>
+    <syntax:VP xmi:id="3963" sofa="6" begin="513" end="526" chunkType="VP"/>
+    <syntax:VP xmi:id="3968" sofa="6" begin="552" end="559" chunkType="VP"/>
+    <syntax:VP xmi:id="3973" sofa="6" begin="609" end="614" chunkType="VP"/>
+    <syntax:VP xmi:id="3978" sofa="6" begin="706" end="709" chunkType="VP"/>
+    <syntax:VP xmi:id="3983" sofa="6" begin="765" end="776" chunkType="VP"/>
+    <syntax:VP xmi:id="3988" sofa="6" begin="811" end="819" chunkType="VP"/>
+    <syntax:VP xmi:id="3993" sofa="6" begin="824" end="837" chunkType="VP"/>
+    <syntax:VP xmi:id="3998" sofa="6" begin="872" end="875" chunkType="VP"/>
+    <syntax:VP xmi:id="4003" sofa="6" begin="968" end="972" chunkType="VP"/>
+    <syntax:VP xmi:id="4008" sofa="6" begin="987" end="990" chunkType="VP"/>
+    <syntax:VP xmi:id="4013" sofa="6" begin="1045" end="1052" chunkType="VP"/>
+    <syntax:VP xmi:id="4018" sofa="6" begin="1066" end="1076" chunkType="VP"/>
+    <syntax:VP xmi:id="4023" sofa="6" begin="1095" end="1110" chunkType="VP"/>
+    <syntax:VP xmi:id="4028" sofa="6" begin="1124" end="1139" chunkType="VP"/>
+    <syntax:VP xmi:id="4033" sofa="6" begin="1148" end="1172" chunkType="VP"/>
+    <syntax:VP xmi:id="4038" sofa="6" begin="1177" end="1184" chunkType="VP"/>
+    <syntax:VP xmi:id="4043" sofa="6" begin="1191" end="1199" chunkType="VP"/>
+    <syntax:VP xmi:id="4048" sofa="6" begin="1227" end="1234" chunkType="VP"/>
+    <syntax:VP xmi:id="4053" sofa="6" begin="1284" end="1297" chunkType="VP"/>
+    <syntax:VP xmi:id="4058" sofa="6" begin="1302" end="1305" chunkType="VP"/>
+    <syntax:VP xmi:id="4063" sofa="6" begin="1336" end="1338" chunkType="VP"/>
+    <syntax:VP xmi:id="4068" sofa="6" begin="1344" end="1350" chunkType="VP"/>
+    <syntax:VP xmi:id="4073" sofa="6" begin="1379" end="1390" chunkType="VP"/>
+    <syntax:VP xmi:id="4078" sofa="6" begin="1400" end="1402" chunkType="VP"/>
+    <syntax:VP xmi:id="4083" sofa="6" begin="1422" end="1433" chunkType="VP"/>
+    <syntax:PP xmi:id="4088" sofa="6" begin="55" end="57" chunkType="PP"/>
+    <syntax:PP xmi:id="4093" sofa="6" begin="137" end="139" chunkType="PP"/>
+    <syntax:PP xmi:id="4098" sofa="6" begin="201" end="204" chunkType="PP"/>
+    <syntax:PP xmi:id="4103" sofa="6" begin="229" end="231" chunkType="PP"/>
+    <syntax:PP xmi:id="4108" sofa="6" begin="310" end="312" chunkType="PP"/>
+    <syntax:PP xmi:id="4113" sofa="6" begin="317" end="319" chunkType="PP"/>
+    <syntax:PP xmi:id="4118" sofa="6" begin="381" end="383" chunkType="PP"/>
+    <syntax:PP xmi:id="4123" sofa="6" begin="402" end="404" chunkType="PP"/>
+    <syntax:PP xmi:id="4128" sofa="6" begin="425" end="427" chunkType="PP"/>
+    <syntax:PP xmi:id="4133" sofa="6" begin="437" end="442" chunkType="PP"/>
+    <syntax:PP xmi:id="4138" sofa="6" begin="456" end="458" chunkType="PP"/>
+    <syntax:PP xmi:id="4143" sofa="6" begin="485" end="489" chunkType="PP"/>
+    <syntax:PP xmi:id="4148" sofa="6" begin="594" end="599" chunkType="PP"/>
+    <syntax:PP xmi:id="4153" sofa="6" begin="619" end="621" chunkType="PP"/>
+    <syntax:PP xmi:id="4158" sofa="6" begin="656" end="663" chunkType="PP"/>
+    <syntax:PP xmi:id="4163" sofa="6" begin="720" end="722" chunkType="PP"/>
+    <syntax:PP xmi:id="4168" sofa="6" begin="753" end="755" chunkType="PP"/>
+    <syntax:PP xmi:id="4173" sofa="6" begin="777" end="781" chunkType="PP"/>
+    <syntax:PP xmi:id="4178" sofa="6" begin="851" end="853" chunkType="PP"/>
+    <syntax:PP xmi:id="4183" sofa="6" begin="904" end="906" chunkType="PP"/>
+    <syntax:PP xmi:id="4188" sofa="6" begin="924" end="927" chunkType="PP"/>
+    <syntax:PP xmi:id="4193" sofa="6" begin="946" end="948" chunkType="PP"/>
+    <syntax:PP xmi:id="4198" sofa="6" begin="959" end="961" chunkType="PP"/>
+    <syntax:PP xmi:id="4203" sofa="6" begin="1077" end="1080" chunkType="PP"/>
+    <syntax:PP xmi:id="4208" sofa="6" begin="1359" end="1363" chunkType="PP"/>
+    <syntax:PP xmi:id="4213" sofa="6" begin="1434" end="1439" chunkType="PP"/>
+    <syntax:ADJP xmi:id="4218" sofa="6" begin="127" end="136" chunkType="ADJP"/>
+    <syntax:ADJP xmi:id="4223" sofa="6" begin="189" end="200" chunkType="ADJP"/>
+    <syntax:ADJP xmi:id="4228" sofa="6" begin="263" end="267" chunkType="ADJP"/>
+    <syntax:ADJP xmi:id="4233" sofa="6" begin="1351" end="1358" chunkType="ADJP"/>
+    <syntax:O xmi:id="4238" sofa="6" begin="308" end="309" chunkType="O"/>
+    <syntax:O xmi:id="4243" sofa="6" begin="332" end="335" chunkType="O"/>
+    <syntax:O xmi:id="4248" sofa="6" begin="379" end="380" chunkType="O"/>
+    <syntax:O xmi:id="4253" sofa="6" begin="630" end="631" chunkType="O"/>
+    <syntax:O xmi:id="4258" sofa="6" begin="679" end="681" chunkType="O"/>
+    <syntax:O xmi:id="4263" sofa="6" begin="794" end="797" chunkType="O"/>
+    <syntax:O xmi:id="4268" sofa="6" begin="912" end="915" chunkType="O"/>
+    <syntax:O xmi:id="4273" sofa="6" begin="953" end="954" chunkType="O"/>
+    <syntax:O xmi:id="4278" sofa="6" begin="1091" end="1094" chunkType="O"/>
+    <syntax:O xmi:id="4283" sofa="6" begin="1256" end="1258" chunkType="O"/>
+    <syntax:O xmi:id="4288" sofa="6" begin="1277" end="1278" chunkType="O"/>
+    <syntax:O xmi:id="4293" sofa="6" begin="1332" end="1335" chunkType="O"/>
+    <syntax:SBAR xmi:id="4298" sofa="6" begin="351" end="355" chunkType="SBAR"/>
+    <syntax:SBAR xmi:id="4303" sofa="6" begin="502" end="506" chunkType="SBAR"/>
+    <syntax:SBAR xmi:id="4308" sofa="6" begin="1185" end="1187" chunkType="SBAR"/>
+    <syntax:SBAR xmi:id="4313" sofa="6" begin="1221" end="1223" chunkType="SBAR"/>
+    <syntax:SBAR xmi:id="4318" sofa="6" begin="1391" end="1393" chunkType="SBAR"/>
+    <syntax:ADVP xmi:id="4323" sofa="6" begin="443" end="447" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4328" sofa="6" begin="448" end="455" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4333" sofa="6" begin="892" end="903" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4338" sofa="6" begin="973" end="977" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4343" sofa="6" begin="982" end="986" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4348" sofa="6" begin="1053" end="1057" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4353" sofa="6" begin="1058" end="1062" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4358" sofa="6" begin="1140" end="1144" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4363" sofa="6" begin="1245" end="1255" chunkType="ADVP"/>
+    <syntax:ADVP xmi:id="4368" sofa="6" begin="1339" end="1343" chunkType="ADVP"/>
+    <syntax:PRT xmi:id="4373" sofa="6" begin="615" end="618" chunkType="PRT"/>
+    <textsem:MedicationMention xmi:id="4378" sofa="6" begin="242" end="253" id="7" ontologyConceptArr="6249 6259 6269 6279" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:MedicationMention xmi:id="4414" sofa="6" begin="407" end="411" id="12" ontologyConceptArr="6289 6299 6309 6319 6329 6339" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:MedicationMention xmi:id="4452" sofa="6" begin="428" end="436" id="13" ontologyConceptArr="6349 6359" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:MedicationMention xmi:id="4486" sofa="6" begin="461" end="484" id="14" ontologyConceptArr="6369 6379" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:MedicationMention xmi:id="4520" sofa="6" begin="461" end="468" id="16" ontologyConceptArr="6389 6399 6409 6419 6429 6439" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:MedicationMention xmi:id="4558" sofa="6" begin="782" end="793" id="38" ontologyConceptArr="6449 6459" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:MedicationMention xmi:id="4592" sofa="6" begin="1326" end="1331" id="61" ontologyConceptArr="6469 6479" typeID="1" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4626" sofa="6" begin="207" end="228" id="5" ontologyConceptArr="6489" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="1" conditional="false" generic="false" historyOf="1"/>
+    <textsem:DiseaseDisorderMention xmi:id="4660" sofa="6" begin="732" end="744" id="35" ontologyConceptArr="6499" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="3" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4694" sofa="6" begin="739" end="744" id="36" ontologyConceptArr="6509 6519 6529" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="3" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4730" sofa="6" begin="745" end="752" id="37" ontologyConceptArr="6539" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="3" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4764" sofa="6" begin="878" end="884" id="42" ontologyConceptArr="6549 6559" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4799" sofa="6" begin="941" end="945" id="47" ontologyConceptArr="6569 6579" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4834" sofa="6" begin="1211" end="1219" id="55" ontologyConceptArr="6589" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:DiseaseDisorderMention xmi:id="4868" sofa="6" begin="1259" end="1268" id="56" ontologyConceptArr="6599" typeID="2" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="4902" sofa="6" begin="168" end="188" id="1" ontologyConceptArr="6609" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="4935" sofa="6" begin="181" end="188" id="4" ontologyConceptArr="6619" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="4968" sofa="6" begin="218" end="228" id="6" ontologyConceptArr="6629" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="1" conditional="false" generic="false" historyOf="1"/>
+    <textsem:SignSymptomMention xmi:id="5001" sofa="6" begin="461" end="476" id="15" ontologyConceptArr="6639" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5034" sofa="6" begin="494" end="501" id="17" ontologyConceptArr="6649" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5067" sofa="6" begin="542" end="547" id="18" ontologyConceptArr="6659" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5100" sofa="6" begin="581" end="587" id="20" ontologyConceptArr="6669 6679" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5134" sofa="6" begin="668" end="678" id="26" ontologyConceptArr="6689" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5167" sofa="6" begin="674" end="678" id="28" ontologyConceptArr="6699" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5200" sofa="6" begin="682" end="701" id="29" ontologyConceptArr="6709 6719" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5234" sofa="6" begin="712" end="719" id="30" ontologyConceptArr="6729" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="3" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5267" sofa="6" begin="842" end="850" id="40" ontologyConceptArr="6739 6749" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5301" sofa="6" begin="1009" end="1016" id="51" ontologyConceptArr="6759" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5334" sofa="6" begin="1026" end="1038" id="52" ontologyConceptArr="6769" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="1" conditional="false" generic="false" historyOf="1"/>
+    <textsem:SignSymptomMention xmi:id="5367" sofa="6" begin="1034" end="1038" id="54" ontologyConceptArr="6779" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="1" conditional="false" generic="false" historyOf="1"/>
+    <textsem:SignSymptomMention xmi:id="5400" sofa="6" begin="1315" end="1325" id="60" ontologyConceptArr="6789 6799" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5434" sofa="6" begin="1444" end="1456" id="62" ontologyConceptArr="6809" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:SignSymptomMention xmi:id="5467" sofa="6" begin="1452" end="1456" id="64" ontologyConceptArr="6819" typeID="3" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5500" sofa="6" begin="104" end="111" id="0" ontologyConceptArr="6829" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5531" sofa="6" begin="269" end="284" id="8" ontologyConceptArr="6839" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="3" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5562" sofa="6" begin="581" end="593" id="19" ontologyConceptArr="6849" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5593" sofa="6" begin="588" end="593" id="21" ontologyConceptArr="6859 6869 6879" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5626" sofa="6" begin="878" end="891" id="41" ontologyConceptArr="6889" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5657" sofa="6" begin="885" end="891" id="43" ontologyConceptArr="6899 6909" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ProcedureMention xmi:id="5689" sofa="6" begin="936" end="940" id="45" ontologyConceptArr="6919" typeID="5" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:AnatomicalSiteMention xmi:id="5720" sofa="6" begin="324" end="331" id="11" ontologyConceptArr="6929" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="3" conditional="false" generic="false" historyOf="0"/>
+    <textsem:AnatomicalSiteMention xmi:id="5744" sofa="6" begin="668" end="673" id="27" ontologyConceptArr="6939 6949" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="-1" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:AnatomicalSiteMention xmi:id="5769" sofa="6" begin="930" end="940" id="44" ontologyConceptArr="6959" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:AnatomicalSiteMention xmi:id="5793" sofa="6" begin="936" end="940" id="46" ontologyConceptArr="6969" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:AnatomicalSiteMention xmi:id="5817" sofa="6" begin="1026" end="1033" id="53" ontologyConceptArr="6979" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="1" conditional="false" generic="false" historyOf="1"/>
+    <textsem:AnatomicalSiteMention xmi:id="5841" sofa="6" begin="1273" end="1277" id="57" ontologyConceptArr="6989" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:AnatomicalSiteMention xmi:id="5865" sofa="6" begin="1444" end="1451" id="63" ontologyConceptArr="6999" typeID="6" segmentID="SIMPLE_SEGMENT" discoveryTechnique="1" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0"/>
+    <textsem:ContextAnnotation xmi:id="5889" sofa="6" begin="181" end="188" id="2" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="infarction" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="5909" sofa="6" begin="181" end="188" id="3" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="myocardial infarction" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="5929" sofa="6" begin="294" end="302" id="9" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="vessels" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="5949" sofa="6" begin="294" end="302" id="10" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="Catheterization" Scope="RIGHT"/>
+    <textsem:ContextAnnotation xmi:id="5969" sofa="6" begin="656" end="663" id="22" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="chest" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="5989" sofa="6" begin="656" end="663" id="23" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="chest pain" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6009" sofa="6" begin="664" end="667" id="24" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="shortness of breath" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6029" sofa="6" begin="664" end="667" id="25" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="pain" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6049" sofa="6" begin="723" end="731" id="31" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="disease" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6109" sofa="6" begin="723" end="731" id="34" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="ulcer" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6089" sofa="6" begin="723" end="731" id="33" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="history" Scope="RIGHT"/>
+    <textsem:ContextAnnotation xmi:id="6069" sofa="6" begin="723" end="731" id="32" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="peptic ulcer" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6129" sofa="6" begin="828" end="841" id="39" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="bleeding" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6149" sofa="6" begin="1009" end="1016" id="48" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="pain" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6189" sofa="6" begin="1009" end="1016" id="50" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="buttock" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6169" sofa="6" begin="1009" end="1016" id="49" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="buttock pain" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6209" sofa="6" begin="1302" end="1308" id="58" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="today" Scope="LEFT"/>
+    <textsem:ContextAnnotation xmi:id="6229" sofa="6" begin="1306" end="1308" id="59" typeID="0" segmentID="SIMPLE_SEGMENT" discoveryTechnique="0" confidence="0.0" polarity="0" uncertainty="0" conditional="false" generic="false" historyOf="0" FocusText="complaints" Scope="LEFT"/>
+    <cas:Sofa xmi:id="6" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="Mr. Smith is a 56-year-old gentleman formally followed at Carolina Premier who presents to obtain a new primary care physician secondary to insurance changes. He has a past medical history significant for a myocardial infarction in 1994. His cholesterol has been fine. Catheterization showed a possible &quot;kink&quot; in one of his vessels and it was thought that he had a possible &quot;eddy&quot; of current which led to a clot. He has been on Coumadin since then as well as a calcium channel blocker with the thought that there may have been a superimposed spasm. He has had several unremarkable stress tests since then. He works out on a Nordic-Track three times a week without any chest pain or shortness of breath. He has a history of possible peptic ulcer disease in 1981. He was treated with H2 blockers and his symptoms resolved. He has never had any bleeding to his knowledge. He had a hernia repair bilaterally in 1989 and surgery for a right knee cyst in 1999, all of which went well. He also has about a year long history of right buttock pain. This happens only when he is sitting for some time and does not change position. It does not happen when he is walking or exercising. He wonders if it might be pyriformis syndrome. If he changes positions frequently or stretches his legs, this seems to help. He has no acute complaints today and is here to get plugged into the system. He does wonder if there is anything else that can be done about his buttock pain."/>
+    <refsem:UmlsConcept xmi:id="6249" codingScheme="SNOMEDCT_US" code="84698008" oid="84698008#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0008377" tui="T123" preferredText="Cholesterol"/>
+    <refsem:UmlsConcept xmi:id="6259" codingScheme="RXNORM" code="2438" oid="2438#RXNORM" score="0.0" disambiguated="false" cui="C0008377" tui="T109" preferredText="Cholesterol"/>
+    <refsem:UmlsConcept xmi:id="6269" codingScheme="RXNORM" code="2438" oid="2438#RXNORM" score="0.0" disambiguated="false" cui="C0008377" tui="T123" preferredText="Cholesterol"/>
+    <refsem:UmlsConcept xmi:id="6279" codingScheme="SNOMEDCT_US" code="84698008" oid="84698008#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0008377" tui="T109" preferredText="Cholesterol"/>
+    <refsem:UmlsConcept xmi:id="6289" codingScheme="RXNORM" code="2623" oid="2623#RXNORM" score="0.0" disambiguated="false" cui="C0009074" tui="T109" preferredText="Clotrimazole"/>
+    <refsem:UmlsConcept xmi:id="6299" codingScheme="SNOMEDCT_US" code="5797005" oid="5797005#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0009074" tui="T121" preferredText="Clotrimazole"/>
+    <refsem:UmlsConcept xmi:id="6309" codingScheme="SNOMEDCT_US" code="5797005" oid="5797005#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0009074" tui="T109" preferredText="Clotrimazole"/>
+    <refsem:UmlsConcept xmi:id="6319" codingScheme="SNOMEDCT_US" code="387325003" oid="387325003#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0009074" tui="T121" preferredText="Clotrimazole"/>
+    <refsem:UmlsConcept xmi:id="6329" codingScheme="SNOMEDCT_US" code="387325003" oid="387325003#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0009074" tui="T109" preferredText="Clotrimazole"/>
+    <refsem:UmlsConcept xmi:id="6339" codingScheme="RXNORM" code="2623" oid="2623#RXNORM" score="0.0" disambiguated="false" cui="C0009074" tui="T121" preferredText="Clotrimazole"/>
+    <refsem:UmlsConcept xmi:id="6349" codingScheme="RXNORM" code="202421" oid="202421#RXNORM" score="0.0" disambiguated="false" cui="C0699129" tui="T121" preferredText="Coumadin"/>
+    <refsem:UmlsConcept xmi:id="6359" codingScheme="RXNORM" code="202421" oid="202421#RXNORM" score="0.0" disambiguated="false" cui="C0699129" tui="T109" preferredText="Coumadin"/>
+    <refsem:UmlsConcept xmi:id="6369" codingScheme="SNOMEDCT_US" code="48698004" oid="48698004#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006684" tui="T121" preferredText="Calcium Channel Blockers"/>
+    <refsem:UmlsConcept xmi:id="6379" codingScheme="SNOMEDCT_US" code="373304005" oid="373304005#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006684" tui="T121" preferredText="Calcium Channel Blockers"/>
+    <refsem:UmlsConcept xmi:id="6389" codingScheme="SNOMEDCT_US" code="5540006" oid="5540006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006675" tui="T121" preferredText="Calcium"/>
+    <refsem:UmlsConcept xmi:id="6399" codingScheme="RXNORM" code="1895" oid="1895#RXNORM" score="0.0" disambiguated="false" cui="C0006675" tui="T123" preferredText="Calcium"/>
+    <refsem:UmlsConcept xmi:id="6409" codingScheme="SNOMEDCT_US" code="5540006" oid="5540006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006675" tui="T196" preferredText="Calcium"/>
+    <refsem:UmlsConcept xmi:id="6419" codingScheme="RXNORM" code="1895" oid="1895#RXNORM" score="0.0" disambiguated="false" cui="C0006675" tui="T121" preferredText="Calcium"/>
+    <refsem:UmlsConcept xmi:id="6429" codingScheme="RXNORM" code="1895" oid="1895#RXNORM" score="0.0" disambiguated="false" cui="C0006675" tui="T196" preferredText="Calcium"/>
+    <refsem:UmlsConcept xmi:id="6439" codingScheme="SNOMEDCT_US" code="5540006" oid="5540006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006675" tui="T123" preferredText="Calcium"/>
+    <refsem:UmlsConcept xmi:id="6449" codingScheme="SNOMEDCT_US" code="108661002" oid="108661002#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019593" tui="T121" preferredText="Histamine H2 Antagonists"/>
+    <refsem:UmlsConcept xmi:id="6459" codingScheme="SNOMEDCT_US" code="372524001" oid="372524001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019593" tui="T121" preferredText="Histamine H2 Antagonists"/>
+    <refsem:UmlsConcept xmi:id="6469" codingScheme="sno_rx_16ab" oid="null#sno_rx_16ab" score="0.0" disambiguated="false" cui="C0310367" tui="T195" preferredText="Today"/>
+    <refsem:UmlsConcept xmi:id="6479" codingScheme="sno_rx_16ab" oid="null#sno_rx_16ab" score="0.0" disambiguated="false" cui="C0310367" tui="T109" preferredText="Today"/>
+    <refsem:UmlsConcept xmi:id="6489" codingScheme="SNOMEDCT_US" code="22298006" oid="22298006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0027051" tui="T047" preferredText="Myocardial Infarction"/>
+    <refsem:UmlsConcept xmi:id="6499" codingScheme="SNOMEDCT_US" code="13200003" oid="13200003#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0030920" tui="T047" preferredText="Peptic Ulcer"/>
+    <refsem:UmlsConcept xmi:id="6509" codingScheme="SNOMEDCT_US" code="255321001" oid="255321001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0041582" tui="T047" preferredText="Ulcer"/>
+    <refsem:UmlsConcept xmi:id="6519" codingScheme="SNOMEDCT_US" code="429040005" oid="429040005#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0041582" tui="T047" preferredText="Ulcer"/>
+    <refsem:UmlsConcept xmi:id="6529" codingScheme="SNOMEDCT_US" code="56208002" oid="56208002#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0041582" tui="T047" preferredText="Ulcer"/>
+    <refsem:UmlsConcept xmi:id="6539" codingScheme="SNOMEDCT_US" code="64572001" oid="64572001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0012634" tui="T047" preferredText="Disease"/>
+    <refsem:UmlsConcept xmi:id="6549" codingScheme="SNOMEDCT_US" code="52515009" oid="52515009#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019270" tui="T190" preferredText="Hernia"/>
+    <refsem:UmlsConcept xmi:id="6559" codingScheme="SNOMEDCT_US" code="414403008" oid="414403008#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019270" tui="T190" preferredText="Hernia"/>
+    <refsem:UmlsConcept xmi:id="6569" codingScheme="SNOMEDCT_US" code="441457006" oid="441457006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0010709" tui="T047" preferredText="Cyst"/>
+    <refsem:UmlsConcept xmi:id="6579" codingScheme="SNOMEDCT_US" code="367643001" oid="367643001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0010709" tui="T047" preferredText="Cyst"/>
+    <refsem:UmlsConcept xmi:id="6589" codingScheme="SNOMEDCT_US" code="64572001" oid="64572001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0039082" tui="T047" preferredText="Syndrome"/>
+    <refsem:UmlsConcept xmi:id="6599" codingScheme="SNOMEDCT_US" code="386781001" oid="386781001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0270814" tui="T047" preferredText="Spastic syndrome"/>
+    <refsem:UmlsConcept xmi:id="6609" codingScheme="SNOMEDCT_US" code="417662000" oid="417662000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0455458" tui="T033" preferredText="PMH - past medical history"/>
+    <refsem:UmlsConcept xmi:id="6619" codingScheme="SNOMEDCT_US" code="392521001" oid="392521001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0262926" tui="T033" preferredText="Medical History"/>
+    <refsem:UmlsConcept xmi:id="6629" codingScheme="SNOMEDCT_US" code="55641003" oid="55641003#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0021308" tui="T046" preferredText="Infarction"/>
+    <refsem:UmlsConcept xmi:id="6639" codingScheme="SNOMEDCT_US" code="115568009" oid="115568009#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C1153433" tui="T044" preferredText="calcium channel activity"/>
+    <refsem:UmlsConcept xmi:id="6649" codingScheme="SNOMEDCT_US" code="88952004" oid="88952004#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0039869" tui="T041" preferredText="Thinking, function"/>
+    <refsem:UmlsConcept xmi:id="6659" codingScheme="SNOMEDCT_US" code="45352006" oid="45352006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0037763" tui="T184" preferredText="Spasm"/>
+    <refsem:UmlsConcept xmi:id="6669" codingScheme="SNOMEDCT_US" code="73595000" oid="73595000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0038435" tui="T033" preferredText="Stress"/>
+    <refsem:UmlsConcept xmi:id="6679" codingScheme="SNOMEDCT_US" code="262188008" oid="262188008#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0038435" tui="T033" preferredText="Stress"/>
+    <refsem:UmlsConcept xmi:id="6689" codingScheme="SNOMEDCT_US" code="29857009" oid="29857009#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0008031" tui="T184" preferredText="Chest Pain"/>
+    <refsem:UmlsConcept xmi:id="6699" codingScheme="SNOMEDCT_US" code="22253000" oid="22253000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0030193" tui="T184" preferredText="Pain"/>
+    <refsem:UmlsConcept xmi:id="6709" codingScheme="SNOMEDCT_US" code="230145002" oid="230145002#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0013404" tui="T184" preferredText="Dyspnea"/>
+    <refsem:UmlsConcept xmi:id="6719" codingScheme="SNOMEDCT_US" code="267036007" oid="267036007#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0013404" tui="T184" preferredText="Dyspnea"/>
+    <refsem:UmlsConcept xmi:id="6729" codingScheme="SNOMEDCT_US" code="392521001" oid="392521001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0262926" tui="T033" preferredText="Medical History"/>
+    <refsem:UmlsConcept xmi:id="6739" codingScheme="SNOMEDCT_US" code="50960005" oid="50960005#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019080" tui="T046" preferredText="Hemorrhage"/>
+    <refsem:UmlsConcept xmi:id="6749" codingScheme="SNOMEDCT_US" code="131148009" oid="131148009#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019080" tui="T046" preferredText="Hemorrhage"/>
+    <refsem:UmlsConcept xmi:id="6759" codingScheme="SNOMEDCT_US" code="392521001" oid="392521001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0262926" tui="T033" preferredText="Medical History"/>
+    <refsem:UmlsConcept xmi:id="6769" codingScheme="SNOMEDCT_US" code="279043006" oid="279043006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0231710" tui="T184" preferredText="Pain in buttock"/>
+    <refsem:UmlsConcept xmi:id="6779" codingScheme="SNOMEDCT_US" code="22253000" oid="22253000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0030193" tui="T184" preferredText="Pain"/>
+    <refsem:UmlsConcept xmi:id="6789" codingScheme="SNOMEDCT_US" code="33962009" oid="33962009#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0277786" tui="T033" preferredText="Chief complaint (finding)"/>
+    <refsem:UmlsConcept xmi:id="6799" codingScheme="SNOMEDCT_US" code="409586006" oid="409586006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0277786" tui="T033" preferredText="Chief complaint (finding)"/>
+    <refsem:UmlsConcept xmi:id="6809" codingScheme="SNOMEDCT_US" code="279043006" oid="279043006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0231710" tui="T184" preferredText="Pain in buttock"/>
+    <refsem:UmlsConcept xmi:id="6819" codingScheme="SNOMEDCT_US" code="22253000" oid="22253000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0030193" tui="T184" preferredText="Pain"/>
+    <refsem:UmlsConcept xmi:id="6829" codingScheme="SNOMEDCT_US" code="261424001" oid="261424001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0439631" tui="T061" preferredText="Primary operation"/>
+    <refsem:UmlsConcept xmi:id="6839" codingScheme="SNOMEDCT_US" code="45211000" oid="45211000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0007430" tui="T061" preferredText="Catheterization"/>
+    <refsem:UmlsConcept xmi:id="6849" codingScheme="SNOMEDCT_US" code="165079009" oid="165079009#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0015260" tui="T060" preferredText="Exercise stress test"/>
+    <refsem:UmlsConcept xmi:id="6859" codingScheme="SNOMEDCT_US" code="108252007" oid="108252007#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0022885" tui="T059" preferredText="Laboratory Procedures"/>
+    <refsem:UmlsConcept xmi:id="6869" codingScheme="SNOMEDCT_US" code="15220000" oid="15220000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0022885" tui="T059" preferredText="Laboratory Procedures"/>
+    <refsem:UmlsConcept xmi:id="6879" codingScheme="SNOMEDCT_US" code="269814003" oid="269814003#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0022885" tui="T059" preferredText="Laboratory Procedures"/>
+    <refsem:UmlsConcept xmi:id="6889" codingScheme="SNOMEDCT_US" code="50465008" oid="50465008#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0019328" tui="T061" preferredText="Herniorrhaphy"/>
+    <refsem:UmlsConcept xmi:id="6899" codingScheme="SNOMEDCT_US" code="257903006" oid="257903006#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0374711" tui="T061" preferredText="Surgical repair"/>
+    <refsem:UmlsConcept xmi:id="6909" codingScheme="SNOMEDCT_US" code="4365001" oid="4365001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0374711" tui="T061" preferredText="Surgical repair"/>
+    <refsem:UmlsConcept xmi:id="6919" codingScheme="SNOMEDCT_US" code="284401004" oid="284401004#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0562271" tui="T060" preferredText="Joint Examination, Knee"/>
+    <refsem:UmlsConcept xmi:id="6929" codingScheme="SNOMEDCT_US" code="59820001" oid="59820001#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0005847" tui="T023" preferredText="Blood Vessel"/>
+    <refsem:UmlsConcept xmi:id="6939" codingScheme="SNOMEDCT_US" code="51185008" oid="51185008#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0817096" tui="T029" preferredText="Chest"/>
+    <refsem:UmlsConcept xmi:id="6949" codingScheme="SNOMEDCT_US" code="261179002" oid="261179002#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0817096" tui="T029" preferredText="Chest"/>
+    <refsem:UmlsConcept xmi:id="6959" codingScheme="SNOMEDCT_US" code="6757004" oid="6757004#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0230431" tui="T023" preferredText="Structure of right knee"/>
+    <refsem:UmlsConcept xmi:id="6969" codingScheme="SNOMEDCT_US" code="304679005" oid="304679005#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0022742" tui="T023" preferredText="Knee"/>
+    <refsem:UmlsConcept xmi:id="6979" codingScheme="SNOMEDCT_US" code="46862004" oid="46862004#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006497" tui="T029" preferredText="Buttocks"/>
+    <refsem:UmlsConcept xmi:id="6989" codingScheme="SNOMEDCT_US" code="30021000" oid="30021000#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C1140621" tui="T023" preferredText="Leg"/>
+    <refsem:UmlsConcept xmi:id="6999" codingScheme="SNOMEDCT_US" code="46862004" oid="46862004#SNOMEDCT_US" score="0.0" disambiguated="false" cui="C0006497" tui="T029" preferredText="Buttocks"/>
+    <cas:View sofa="6" members="1 13 19 25 31 37 43 49 55 61 67 73 79 85 91 97 103 109 115 121 127 139 151 163 175 187 199 211 223 235 247 259 271 283 295 307 319 331 343 355 367 379 391 403 415 427 439 451 463 475 487 499 511 523 535 547 559 571 583 595 607 619 631 643 655 667 679 691 703 715 727 739 751 763 775 787 799 811 823 835 847 859 871 883 895 907 919 931 943 955 967 979 991 1003 1015 1027 1039 1051 1063 1075 1087 1099 1111 1123 1135 1147 1159 1171 1183 1195 1207 1219 1231 1243 1255 1267 1279 1291 1303 1315 1327 1339 1351 1363 1375 1387 1399 1411 1423 1435 1447 1459 1471 1483 1495 1507 1519 1531 1543 1555 1567 1579 1591 1603 1615 1627 1639 1651 1663 1675 1687 1699 1711 1723 1735 1747 1759 1771 1783 1795 1807 1819 1831 1843 1855 1867 1879 1891 1903 1915 1927 1939 1951 1963 1975 1987 1999 2011 2023 2035 2047 2059 2071 2083 2095 2107 2119 2131 2143 2155 2167 2179 2191 2203 2215 2227 2239 2251 2263 2275 2287 2299 2311 2323 2335 2347 2359 2371 2383 2395 2407 2419 2431 2443 2455 2467 2479 2491 2503 2515 2527 2539 2551 2563 2575 2587 2599 2611 2623 2635 2647 2659 2671 2683 2695 2707 2719 2731 2743 2755 2767 2779 2791 2803 2815 2827 2839 2851 2863 2875 2887 2899 2911 2923 2935 2947 2959 2971 2983 2995 3007 3019 3031 3043 3055 3067 3079 3091 3103 3115 3127 3139 3151 3163 3175 3187 3199 3211 3223 3235 3247 3256 3265 3274 3283 3292 3300 3308 3316 3324 3332 3340 3348 3356 3364 3372 3380 3388 3396 3404 3412 3420 3428 3436 3444 3452 3460 3468 3476 3484 3492 3500 3508 3513 3518 3523 3528 3533 3538 3543 3548 3553 3558 3563 3568 3573 3578 3583 3588 3593 3598 3603 3608 3613 3618 3623 3628 3633 3638 3643 3648 3653 3658 3663 3668 3673 3678 3683 3688 3693 3698 3703 3708 3713 3718 3723 3728 3733 3738 3743 3748 3753 3758 3763 3768 3773 3778 3783 3788 3793 3798 3803 3808 3813 3818 3823 3828 3833 3838 3843 3848 3853 3858 3863 3868 3873 3878 3883 3888 3893 3898 3903 3908 3913 3918 3923 3928 3933 3938 3943 3948 3953 3958 3963 3968 3973 3978 3983 3988 3993 3998 4003 4008 4013 4018 4023 4028 4033 4038 4043 4048 4053 4058 4063 4068 4073 4078 4083 4088 4093 4098 4103 4108 4113 4118 4123 4128 4133 4138 4143 4148 4153 4158 4163 4168 4173 4178 4183 4188 4193 4198 4203 4208 4213 4218 4223 4228 4233 4238 4243 4248 4253 4258 4263 4268 4273 4278 4283 4288 4293 4298 4303 4308 4313 4318 4323 4328 4333 4338 4343 4348 4353 4358 4363 4368 4373 4378 4414 4452 4486 4520 4558 4592 4626 4660 4694 4730 4764 4799 4834 4868 4902 4935 4968 5001 5034 5067 5100 5134 5167 5200 5234 5267 5301 5334 5367 5400 5434 5467 5500 5531 5562 5593 5626 5657 5689 5720 5744 5769 5793 5817 5841 5865 5889 5909 5929 5949 5969 5989 6009 6029 6049 6109 6089 6069 6129 6149 6189 6169 6209 6229"/>
+</xmi:XMI>
