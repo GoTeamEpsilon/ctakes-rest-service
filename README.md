@@ -1,19 +1,17 @@
-# ctakes-rest-service
-
-## Description
-
 _(NOTE: This is alpha software... this project is under active development!)_
+
+# cTAKES Rest Service
 
 The goal of this solution is to provide a JSON-based REST service to process unstructured clinical text through a smart natural language processing system in a fast, accurate, and easy to setup way.
 
-This software provided to the open source healthcare community by:
+_This software provided to the open source healthcare community by:_
 
 - Gandhirajan N (Technical Architect)
 - Sandeep B G (Solutions Architect)
 - Daniel E (Solutions Engineer)
 - Matthew V (Software Engineer)
 
-Thanks to the following people for support and guidance:
+_Thanks to the following people for support and guidance:_
 
 - Timothy M, PhD (Scientific Researcher)
 - Sean F (Senior Software Developer)
@@ -31,11 +29,11 @@ docker-compose up
 
 ### Linux/MacOS
 
-TODO: details here
+_TODO: details here_
 
 ### Windows
 
-TODO: details here
+_TODO: details here_
 
 ## Deployment
 
@@ -47,15 +45,17 @@ HTTP POST `data` to `http://localhost:8080/ctakes-nlp-service/ctakesnlp/analyze`
 
 ## Custom Dictionaries
 
-To use a custom dictionary, adjust `customDictionary.xml` to meet your needs and replace (TODO: instructions here) file in `Dockerfile` to have the build convert the contents to MySQL tables.
+To use a custom dictionary, adjust `customDictionary.xml` to meet your needs and replace _(TODO: instructions here)_ file in `Dockerfile` to have the build convert the contents to MySQL tables.
 
-## Remaining Version 1 Work
+## Project Management
 
-[https://github.com/GoTeamEpsilon/ctakes-rest-service/projects/1](Project Board)
+### Remaining Version 1 Work
 
-## Version 2 Work
+- [Project Board](https://github.com/GoTeamEpsilon/ctakes-rest-service/projects/1)
 
-[https://github.com/GoTeamEpsilon/ctakes-rest-service/projects/2](Project Board)
+### Version 2 Work
+
+- [Project Board](https://github.com/GoTeamEpsilon/ctakes-rest-service/projects/2)
 
 ## License
 
