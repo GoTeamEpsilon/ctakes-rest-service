@@ -2,38 +2,39 @@
 
 apt-get update -y
 apt-get install -y software-properties-common
-add-apt-repository "deb http://http.debian.net/debian jessie-backports main"
+add-apt-repository -y "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"
 apt-get update -y
-apt-get install -y -t jessie-backports openjdk-8-jre-headless
-/usr/sbin/update-java-alternatives -s java-1.8.0-openjdk-amd64
-apt-get install -y openjdk-8-jdk openjdk-8-jre
-apt-get install -y maven vim subversion
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | \
+/usr/bin/debconf-set-selections
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
+apt-get install -y maven vim subversion parallel openjdk-7-jdk oracle-java8-installer
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+apt-get install -y oracle-java8-set-default
+svn ls 'https://svn.apache.org/repos/asf/ctakes/branches/ctakes-4.0.0/' | parallel svn export 'https://svn.apache.org/repos/asf/ctakes/branches/ctakes-4.0.0/'{}
 
-# TODO: Don't point at trunk
-svn checkout https://svn.apache.org/repos/asf/ctakes/trunk
-
-cp SpringUpgrade/ctakes-dictionary-lookup-fast/src/main/java/org/apache/ctakes/dictionary/lookup2/ae/JCasTermAnnotator.java trunk/ctakes-dictionary-lookup-fast/src/main/java/org/apache/ctakes/dictionary/lookup2/ae/
-cp SpringUpgrade/ctakes-dictionary-lookup-fast/desc/analysis_engine/UmlsLookupAnnotator.xml trunk/ctakes-dictionary-lookup-fast/desc
-cp SpringUpgrade/ctakes-dictionary-lookup-fast/desc/analysis_engine/UmlsOverlapLookupAnnotator.xml trunk/ctakes-dictionary-lookup-fast/desc
-cp SpringUpgrade/ctakes-assertion/build.xml trunk/ctakes-assertion
-cp SpringUpgrade/ctakes-assertion/pom.xml trunk/ctakes-assertion
-cp SpringUpgrade/ctakes-type-system/pom.xml trunk/ctakes-type-system
-cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/evaluator/CorpusKernelEvaluatorImpl.java trunk/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/evaluator
-cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/tree/InstanceTreeBuilderImpl.java trunk/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/tree
-cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/AbstractBagOfWordsExporter.java trunk/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/
-cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/SparseDataExporterImpl.java trunk/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/
-cp SpringUpgrade/ctakes-ytex/pom.xml trunk/ctakes-ytex/
-cp SpringUpgrade/ctakes-ytex-uima/src/main/java/org/apache/ctakes/ytex/uima/DBCollectionReader.java trunk/ctakes-ytex-uima/src/main/java/org/apache/ctakes/ytex/uima
-cp SpringUpgrade/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/ConceptSearchServiceImpl.java trunk/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search
-cp SpringUpgrade/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/DocumentSearchServiceImpl.java trunk/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search
-cp SpringUpgrade/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/DocumentViewBean.java trunk/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search
-cp SpringUpgrade/ctakes-ytex-web/pom.xml trunk/ctakes-ytex-web/
-cp SpringUpgrade/pom.xml trunk/
-cd trunk
+cp SpringUpgrade/ctakes-dictionary-lookup-fast/src/main/java/org/apache/ctakes/dictionary/lookup2/ae/JCasTermAnnotator.java ctakes-4.0.0/ctakes-dictionary-lookup-fast/src/main/java/org/apache/ctakes/dictionary/lookup2/ae/
+cp SpringUpgrade/ctakes-dictionary-lookup-fast/desc/analysis_engine/UmlsLookupAnnotator.xml ctakes-4.0.0/ctakes-dictionary-lookup-fast/desc/
+cp SpringUpgrade/ctakes-dictionary-lookup-fast/desc/analysis_engine/UmlsOverlapLookupAnnotator.xml ctakes-4.0.0/ctakes-dictionary-lookup-fast/desc/
+cp SpringUpgrade/ctakes-assertion/build.xml ctakes-4.0.0/ctakes-assertion/
+cp SpringUpgrade/ctakes-assertion/pom.xml ctakes-4.0.0/ctakes-assertion/
+cp SpringUpgrade/ctakes-type-system/pom.xml ctakes-4.0.0/ctakes-type-system/
+cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/evaluator/CorpusKernelEvaluatorImpl.java ctakes-4.0.0/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/evaluator/
+cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/tree/InstanceTreeBuilderImpl.java ctakes-4.0.0/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/tree/
+cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/AbstractBagOfWordsExporter.java ctakes-4.0.0/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/
+cp SpringUpgrade/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/SparseDataExporterImpl.java ctakes-4.0.0/ctakes-ytex/src/main/java/org/apache/ctakes/ytex/kernel/
+cp SpringUpgrade/ctakes-ytex/pom.xml ctakes-4.0.0/ctakes-ytex/
+cp SpringUpgrade/ctakes-ytex-uima/src/main/java/org/apache/ctakes/ytex/uima/DBCollectionReader.java ctakes-4.0.0/ctakes-ytex-uima/src/main/java/org/apache/ctakes/ytex/uima/
+cp SpringUpgrade/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/ConceptSearchServiceImpl.java ctakes-4.0.0/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/
+cp SpringUpgrade/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/DocumentSearchServiceImpl.java ctakes-4.0.0/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/
+cp SpringUpgrade/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/DocumentViewBean.java ctakes-4.0.0/ctakes-ytex-web/src/main/java/org/apache/ctakes/ytex/web/search/
+cp SpringUpgrade/ctakes-ytex-web/pom.xml ctakes-4.0.0/ctakes-ytex-web/
+cp SpringUpgrade/pom.xml ctakes-4.0.0/
+cd ctakes-4.0.0
 mvn clean install -Dmaven.test.skip=true
 cd ..
-tar -xvf trunk/ctakes-distribution/target/apache-ctakes-4.0.1-SNAPSHOT-bin.tar.gz
-cp trunk/ctakes-distribution/target/apache-ctakes-4.0.1-SNAPSHOT/lib/* ctakes-rest-service/repo
+tar -xvf ctakes-4.0.0/ctakes-distribution/target/apache-ctakes-4.0.1-SNAPSHOT-bin.tar.gz
+cp ctakes-4.0.0/ctakes-distribution/target/apache-ctakes-4.0.1-SNAPSHOT/lib/* ctakes-rest-service/repo
 mvn clean install -Dmaven.test.skip=true
 cd ..
 echo 'TODO: com.ctakes.nlp.data.service.CtakesHsqlToMysql.java'
