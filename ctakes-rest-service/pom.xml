@@ -64,6 +64,16 @@
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
+				<groupId>org.apache.ctakes</groupId>
+				<artifactId>ctakes-dictionary-lookup-fast</artifactId>
+				<version>${ctakes.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.ctakes</groupId>
+				<artifactId>ctakes-dictionary-lookup-fast-res</artifactId>
+				<version>${ctakes.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.ctakes</groupId>
 			<artifactId>ctakes-preprocessor</artifactId>
 			<version>${ctakes.version}</version>
@@ -100,156 +110,117 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-context-tokenizer
-				</artifactId>
+			<artifactId>ctakes-context-tokenizer</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-clinical-pipeline
-				</artifactId>
+			<artifactId>ctakes-clinical-pipeline</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-ne-contexts
-				</artifactId>
+			<artifactId>ctakes-clinical-pipeline-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-ne-contexts-res
-				</artifactId>
+			<artifactId>ctakes-ne-contexts</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-assertion
-				</artifactId>
+			<artifactId>ctakes-ne-contexts-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-assertion-res
-				</artifactId>
+			<artifactId>ctakes-assertion</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-assertion-zoner
-				</artifactId>
+			<artifactId>ctakes-assertion-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-assertion-zoner-res
-				</artifactId>
+			<artifactId>ctakes-assertion-zoner</artifactId>
+			<version>${ctakes.version}</version>
+		</dependency>
+		<dependency>			
+			<groupId>org.apache.ctakes</groupId>
+			<artifactId>ctakes-assertion-zoner-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-constituency-parser
-				</artifactId>
+			<artifactId>ctakes-constituency-parser</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-constituency-parser-res
-				</artifactId>
+			<artifactId>ctakes-constituency-parser-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-coreference
-				</artifactId>
+			<artifactId>ctakes-coreference</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-coreference-res
-				</artifactId>
+			<artifactId>ctakes-coreference-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-drug-ner
-				</artifactId>
+			<artifactId>ctakes-drug-ner</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-drug-ner-res
-				</artifactId>
+			<artifactId>ctakes-drug-ner-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-side-effect
-				</artifactId>
+			<artifactId>ctakes-side-effect</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-side-effect-res
-				</artifactId>
+			<artifactId>ctakes-side-effect-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-smoking-status
-				</artifactId>
+			<artifactId>ctakes-smoking-status</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-smoking-status-res
-				</artifactId>
+			<artifactId>ctakes-smoking-status-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-dependency-parser
-				</artifactId>
+			<artifactId>ctakes-dependency-parser</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-dependency-parser-res
-				</artifactId>
+			<artifactId>ctakes-dependency-parser-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-relation-extractor
-				</artifactId>
+			<artifactId>ctakes-relation-extractor</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ctakes</groupId>
-			<artifactId>
-					ctakes-relation-extractor-res
-				</artifactId>
+			<artifactId>ctakes-relation-extractor-res</artifactId>
 			<version>${ctakes.version}</version>
 		</dependency>
 		<dependency>
