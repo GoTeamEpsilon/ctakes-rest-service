@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sd-med-model">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/org/apache/ctakes/core/sentdetect/sd-med-model.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -2,7 +2,7 @@ $(document).ready(function() {
      $('#fire').click(function() {
         try {
             $.ajax({
-				url: "http://localhost:8080/ctakes-nlp-service/ctakesnlp/analyze",
+				url: "http://localhost:8080/ctakes-web-rest/service/analyze",
 				type: "POST",
 				crossDomain: true,
 				cache: false,

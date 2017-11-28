@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="model">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/org/apache/ctakes/temporal/ae/eventtime/20150629/model.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

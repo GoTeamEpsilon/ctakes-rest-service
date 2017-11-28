@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mayo-pos">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/org/apache/ctakes/postagger/models/mayo-pos.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -16,11 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.ctakes.nlp.rest.service;
+package org.apache.ctakes.rest.service;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import com.ctakes.nlp.web.client.servlet.Pipeline;
-import com.ctakes.nlp.web.client.servlet.XMLParser;
+import org.apache.ctakes.rest.util.Pipeline;
+import org.apache.ctakes.rest.util.XMLParser;
 import org.apache.log4j.Logger;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.impl.XmiCasSerializer;

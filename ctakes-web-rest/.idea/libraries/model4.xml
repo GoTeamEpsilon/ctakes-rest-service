@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="model4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/org/apache/ctakes/relationextractor/models/location_of/model.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

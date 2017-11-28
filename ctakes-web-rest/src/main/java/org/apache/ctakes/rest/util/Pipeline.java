@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.ctakes.nlp.web.client.servlet;
+package org.apache.ctakes.rest.util;
 
 
 import com.google.common.collect.Lists;
