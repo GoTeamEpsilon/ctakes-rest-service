@@ -19,15 +19,17 @@
 package org.apache.ctakes.rest.service;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
+import org.apache.ctakes.core.pipeline.PipelineBuilder;
 import org.apache.ctakes.rest.util.Pipeline;
 import org.apache.ctakes.rest.util.XMLParser;
 import org.apache.log4j.Logger;
+import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
+import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.cas.impl.XmiCasSerializer;
-import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.util.JCasPool;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import java.io.ByteArrayInputStream;
@@ -45,18 +47,18 @@ import java.util.Map;
 @RestController
 public class CtakesNLPService {
 
-
     private static final Logger LOGGER = Logger.getLogger(CtakesNLPService.class);
-
-    private static AnalysisEngine pipeline;
+    AnalysisEngine engine;
+    JCasPool pool;
 
     @PostConstruct
     public void init() throws ServletException {
         LOGGER.info("Initializing Pipeline...");
-        AggregateBuilder aggregateBuilder;
         try {
-            aggregateBuilder = Pipeline.getAggregateBuilder();
-            pipeline = aggregateBuilder.createAggregate();
+            PipelineBuilder builder = Pipeline.createBuilder();
+            AnalysisEngineDescription analysisEngineDesc = builder.getAnalysisEngineDesc();
+            engine = UIMAFramework.produceAnalysisEngine(analysisEngineDesc);
+            pool = new JCasPool( 100, engine );
         } catch (Exception e) {
             e.printStackTrace();
             throw new ServletException(e);
@@ -68,15 +70,14 @@ public class CtakesNLPService {
     public Map<String,List<String>> getAnalyzedJSON(@RequestBody String analysisText)
             throws ServletException, IOException {
         Map<String,List<String>>  resultMap = null;
-
         LOGGER.info("###\n" + analysisText + "###\n");
         if (analysisText != null && analysisText.trim().length() > 0) {
             try {
-                JCas jcas = pipeline.newJCas();
+                JCas jcas = pool.getJCas(-1);
                 jcas.setDocumentText(analysisText);
-                pipeline.process(jcas);
+                engine.process(jcas);
                 resultMap = formatResults(jcas);
-                jcas.reset();
+                pool.releaseJCas(jcas);
             } catch (Exception e) {
                 e.printStackTrace();
                 throw new ServletException(e);
@@ -93,5 +94,4 @@ public class CtakesNLPService {
         XMLParser parser = new XMLParser();
         return parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
     }
-
 }
