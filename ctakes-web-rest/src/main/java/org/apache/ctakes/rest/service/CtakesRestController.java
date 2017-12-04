@@ -59,7 +59,6 @@ public class CtakesRestController {
         LOGGER.info("Initializing analysis engine and jcas pool");
         try {
             final File inputFile = FileLocator.getFile(PIPER_FILE_PATH);
-            System.out.println("Path - " +  inputFile.getAbsolutePath());
             PiperFileReader reader = new PiperFileReader(inputFile.getAbsolutePath());
             PipelineBuilder builder = reader.getBuilder();
             AnalysisEngineDescription analysisEngineDesc = builder.getAnalysisEngineDesc();
