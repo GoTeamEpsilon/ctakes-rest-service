@@ -20,7 +20,8 @@ package org.apache.ctakes.rest.service;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.ctakes.core.pipeline.PipelineBuilder;
-import org.apache.ctakes.rest.util.Pipeline;
+import org.apache.ctakes.core.pipeline.PiperFileReader;
+import org.apache.ctakes.core.resource.FileLocator;
 import org.apache.ctakes.rest.util.XMLParser;
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
@@ -33,6 +34,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -45,17 +47,21 @@ import java.util.Map;
  * as input and produces extracted text as output
  */
 @RestController
-public class CtakesNLPService {
+public class CtakesRestController {
 
-    private static final Logger LOGGER = Logger.getLogger(CtakesNLPService.class);
-    AnalysisEngine engine;
-    JCasPool pool;
+    private static final Logger LOGGER = Logger.getLogger(CtakesRestController.class);
+    private static final String PIPER_FILE_PATH = "pipers/Default.piper";
+    private AnalysisEngine engine;
+    private JCasPool pool;
 
     @PostConstruct
     public void init() throws ServletException {
-        LOGGER.info("Initializing Pipeline...");
+        LOGGER.info("Initializing analysis engine and jcas pool");
         try {
-            PipelineBuilder builder = Pipeline.createBuilder();
+            final File inputFile = FileLocator.getFile(PIPER_FILE_PATH);
+            System.out.println("Path - " +  inputFile.getAbsolutePath());
+            PiperFileReader reader = new PiperFileReader(inputFile.getAbsolutePath());
+            PipelineBuilder builder = reader.getBuilder();
             AnalysisEngineDescription analysisEngineDesc = builder.getAnalysisEngineDesc();
             engine = UIMAFramework.produceAnalysisEngine(analysisEngineDesc);
             pool = new JCasPool( 100, engine );
@@ -70,7 +76,6 @@ public class CtakesNLPService {
     public Map<String,List<String>> getAnalyzedJSON(@RequestBody String analysisText)
             throws ServletException, IOException {
         Map<String,List<String>>  resultMap = null;
-        LOGGER.info("###\n" + analysisText + "###\n");
         if (analysisText != null && analysisText.trim().length() > 0) {
             try {
                 JCas jcas = pool.getJCas(-1);
@@ -90,7 +95,7 @@ public class CtakesNLPService {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         XmiCasSerializer.serialize(jcas.getCas(), output);
         String outputStr = output.toString();
-        Files.write(Paths.get("Result.xml"), outputStr.getBytes());
+        //Files.write(Paths.get("Result.xml"), outputStr.getBytes());
         XMLParser parser = new XMLParser();
         return parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
     }
