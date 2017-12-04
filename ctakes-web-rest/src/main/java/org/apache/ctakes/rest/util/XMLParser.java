@@ -8,17 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Gandhi on 9/11/2017.
- */
+
 public class XMLParser {  
 
     public Map<String,List<String>> parse(InputStream in) throws Exception {
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
         XMLStreamReader streamReader = inputFactory.createXMLStreamReader(in);
-        //StringBuffer sb = new StringBuffer();
         String analysisText = null;
-        //sb.append("<table border='1'>");
         List<String> disorderList = new ArrayList<>();
         List<String> findingsList = new ArrayList<>();
         List<String> procedureList = new ArrayList<>();
@@ -92,86 +88,7 @@ public class XMLParser {
         responseMap.put(SemanticNames.DateAnnotation.name(),dateList);
         responseMap.put(SemanticNames.MeasurementAnnotation.name(),measurementList);
         responseMap.put(SemanticNames.CompanyAnnotation.name(),companyNameList);
-
-
-        /*sb.append("<tr><td>");
-        sb.append("-----------Disorders-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, disorderList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------Findings-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, findingsList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------Procedure-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, procedureList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------Time-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, timeList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------FractionStrengthAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, fractionStrengthList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------DrugChangeStatusAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, drugChangeStatusList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------StrengthUnitAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, strengthUnitList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------StrengthAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, strengthList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------RouteAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, routeList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------FrequencyUnitAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, frequencyUnitList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------DateAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, dateList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------MeasurementAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, measurementList);
-
-        sb.append("<tr><td>");
-        sb.append("-----------CompanyAnnotation-----------");
-        sb.append("</td></tr>");
-        printFindings(sb, companyNameList);
-
-
-        sb.append("</table>");*/
         return responseMap;
-    }
-
-    private void printFindings(StringBuffer sb, List<String> disorderList) {
-        if (disorderList != null && disorderList.size() > 0) {
-            for (String disorder : disorderList) {
-                sb.append("<tr><td>");
-                sb.append(disorder);
-                sb.append("</td></tr>");
-            }
-        }
     }
 
     private List<String> extractData(XMLStreamReader streamReader, String analysisText, String mentionName, List<String> semanticList, Map<String, String> semanticPosMap) {
