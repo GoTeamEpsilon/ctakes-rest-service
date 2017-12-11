@@ -72,9 +72,9 @@ public class CtakesRestController {
 
     @RequestMapping(value="/analyze", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,List<String>> getAnalyzedJSON(@RequestBody String analysisText)
+    public Map<String,Map<String,List<String>>> getAnalyzedJSON(@RequestBody String analysisText)
             throws ServletException, IOException {
-        Map<String,List<String>>  resultMap = null;
+        Map<String,Map<String,List<String>>>  resultMap = null;
         if (analysisText != null && analysisText.trim().length() > 0) {
             try {
                 JCas jcas = pool.getJCas(-1);
@@ -90,7 +90,7 @@ public class CtakesRestController {
         return resultMap;
     }
 
-    private Map<String,List<String>>  formatResults(JCas jcas) throws Exception {
+    private Map<String,Map<String,List<String>>>  formatResults(JCas jcas) throws Exception {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         XmiCasSerializer.serialize(jcas.getCas(), output);
         String outputStr = output.toString();
