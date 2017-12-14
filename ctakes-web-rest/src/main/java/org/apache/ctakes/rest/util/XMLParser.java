@@ -140,8 +140,10 @@ public class XMLParser {
             String[] ontologyStringArr = ontologyArrayRawString.split("\\s");
             for (String ontologyString : ontologyStringArr) {
                 List umlsDetList = umlsConceptMap.get(ontologyString);
-                if (!umlsDetList.contains(semanticDetailsList)) {
-                    semanticDetailsList.add(umlsDetList.toString());
+                if(umlsDetList != null && umlsDetList.size() > 0) {
+                    if (!umlsDetList.contains(semanticDetailsList)) {
+                        semanticDetailsList.add(umlsDetList.toString());
+                    }
                 }
                 semanticDetailsMap.put(semanticName, semanticDetailsList);
             }
