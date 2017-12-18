@@ -40,6 +40,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServlet;
+import org.apache.ctakes.core.util.OntologyConceptUtil;
+import org.apache.ctakes.typesystem.type.refsem.UmlsConcept;
+import org.apache.ctakes.typesystem.type.relation.RelationArgument;
+import org.apache.ctakes.typesystem.type.relation.ResultOfTextRelation;
+import org.apache.ctakes.typesystem.type.textsem.LabMention;
+import org.apache.ctakes.typesystem.type.textsem.MedicationMention;
+import org.apache.uima.fit.factory.JCasFactory;
+import org.apache.uima.fit.util.JCasUtil;
+import org.apache.uima.jcas.tcas.Annotation;
+import org.json.simple.JSONObject;
 
 
 /*
@@ -55,12 +72,28 @@ public class CtakesRestController {
     private static final String DEFAULT_PIPELINE = "Default";
     private static final String FULL_PIPELINE = "Full";
     private static final Map<String, PipelineRunner> _pipelineRunners = new HashMap<>();
+    private static final String PIPER_FILE_PATH = "pipers/RaxaMentions.piper";
+    private AnalysisEngine engine;
+    private JCasPool pool;
+
 
     @PostConstruct
     public void init() throws ServletException {
-        LOGGER.info("Initializing analysis engines and jcas pools");
-        _pipelineRunners.put(DEFAULT_PIPELINE, new PipelineRunner(DEFAULT_PIPER_FILE_PATH));
-        _pipelineRunners.put(FULL_PIPELINE, new PipelineRunner(FULL_PIPER_FILE_PATH));
+
+        try {
+            LOGGER.info("Initializing analysis engines and jcas pools");
+            _pipelineRunners.put(DEFAULT_PIPELINE, new PipelineRunner(DEFAULT_PIPER_FILE_PATH));
+            _pipelineRunners.put(FULL_PIPELINE, new PipelineRunner(FULL_PIPER_FILE_PATH));
+            final File inputFile = FileLocator.getFile(PIPER_FILE_PATH);
+            PiperFileReader reader = new PiperFileReader(inputFile.getAbsolutePath());
+            PipelineBuilder builder = reader.getBuilder();
+            AnalysisEngineDescription analysisEngineDesc = builder.getAnalysisEngineDesc();            
+            engine = UIMAFramework.produceAnalysisEngine(analysisEngineDesc);
+            pool = new JCasPool( 100, engine );
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ServletException(e);
+        }
     }
 
     @RequestMapping(value = "/analyze", method = RequestMethod.POST)
@@ -85,7 +118,97 @@ public class CtakesRestController {
         String outputStr = output.toString();
         Files.write(Paths.get("Result.xml"), outputStr.getBytes());
         XMLParser parser = new XMLParser();
-        return parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
+        Map<String,List<String>> result = parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
+        
+        
+        
+        ArrayList<LabMention> labMentions = new ArrayList<LabMention>(JCasUtil.select(jcas, LabMention.class)); 
+        ArrayList<MedicationMention> medicationMentions = new ArrayList<MedicationMention>(JCasUtil.select(jcas, MedicationMention.class)); 
+
+        List<String> labValueMentionList = new ArrayList();
+        List<String> drugNerMentionList = new ArrayList();
+
+        for (int i = 0; i < labMentions.size(); i++) {
+                LabMention labMention = labMentions.get(i);
+                JSONObject labMentionJsonObject = new JSONObject();
+                if(labMention.getCoveredText() != null){
+                        labMentionJsonObject.put("labName", labMention.getCoveredText());
+
+                }
+                if(labMention.getLabValue() != null && labMention.getLabValue().getArg2() != null && labMention.getLabValue().getArg2().getArgument()!= null && labMention.getLabValue().getArg2().getArgument().getCoveredText() != null){
+                        String coveredText = labMention.getLabValue().getArg2().getArgument().getCoveredText();
+                        List<String> coveredList = Arrays.asList(coveredText.split("/"));
+                        labMentionJsonObject.put("value", coveredList);       
+                } else {
+                        labMentionJsonObject.put("value", new ArrayList()); 
+                }
+
+                final Collection<UmlsConcept> umlsConcepts = OntologyConceptUtil.getUmlsConcepts( labMention );
+                for ( UmlsConcept umlsConcept : umlsConcepts ) {
+                    final String cui = umlsConcept.getCui();
+                    labMentionJsonObject.put("cui", cui);
+                 }
+                labValueMentionList.add(labMentionJsonObject.toString());
+        }
+
+
+        for (int i = 0; i < medicationMentions.size(); i ++) {
+                MedicationMention medicationMention = medicationMentions.get(i);
+                JSONObject medicationMentionJsonObject = new JSONObject();
+
+                if(medicationMention.getCoveredText() != null){
+                        medicationMentionJsonObject.put("name", medicationMention.getCoveredText());
+
+                }
+                
+                if(medicationMention.getMedicationFrequency() != null){
+                    medicationMentionJsonObject.put("frequency", medicationMention.getMedicationFrequency().getCategory());
+                }
+
+                if(medicationMention.getMedicationStrength() != null){
+                    medicationMentionJsonObject.put("strength", medicationMention.getMedicationStrength().getCategory());
+                }
+
+                if(medicationMention.getMedicationAllergy() != null){
+                    medicationMentionJsonObject.put("allergy", medicationMention.getMedicationAllergy().getCategory());
+                }
+
+                if(medicationMention.getMedicationDuration() != null){
+                    medicationMentionJsonObject.put("duration", medicationMention.getMedicationDuration().getCategory());
+                }
+
+                if(medicationMention.getMedicationForm() != null){
+                    medicationMentionJsonObject.put("form", medicationMention.getMedicationForm().getCategory());
+                }
+
+                if(medicationMention.getMedicationRoute() != null){
+                    medicationMentionJsonObject.put("route", medicationMention.getMedicationRoute().getCategory());
+                }
+
+                if(medicationMention.getMedicationDosage() != null){
+                    medicationMentionJsonObject.put("dosage", medicationMention.getMedicationDosage().getCategory());
+                }
+
+                if(medicationMention.getMedicationStrength() !=null){
+                    medicationMentionJsonObject.put("strength", medicationMention.getMedicationStrength().getCategory());
+                }
+
+                if(medicationMention.getMedicationStatusChange()!=null){
+                    medicationMentionJsonObject.put("statusChange", medicationMention.getMedicationStatusChange().getCategory());
+                }
+
+                final Collection<UmlsConcept> umlsConcepts = OntologyConceptUtil.getUmlsConcepts( medicationMention );
+                for ( UmlsConcept umlsConcept : umlsConcepts ) {
+                    final String cui = umlsConcept.getCui();
+                    medicationMentionJsonObject.put("cui", cui);
+                 }
+                drugNerMentionList.add(medicationMentionJsonObject.toString());
+        }
+        
+        result.put("LabValueMentionList", labValueMentionList);
+        result.put("DrugNerMentionList", drugNerMentionList);
+        
+        return result;
     }
 
     static private final class PipelineRunner {

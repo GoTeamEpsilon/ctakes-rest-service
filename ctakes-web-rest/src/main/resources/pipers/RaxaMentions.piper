@@ -1,0 +1,11 @@
+//       ***  Piper File  ***
+//       Created by Chahal
+//       on November 22, 2017
+
+// Commands and parameters to create a default plaintext document processing pipeline with UMLS lookup
+
+
+load DefaultFastPipeline
+add org.apache.ctakes.dictionary.lookup2.ae.DefaultJCasTermAnnotator LookupXml=org/apache/ctakes/dictionary/lookup/fast/tinyDictSpec.xml
+add LabValueFinder
+add org.apache.ctakes.drugner.ae.DrugMentionAnnotator STATUS_BOUNDARY_ANN_TYPE="org.apache.ctakes.typesystem.type.textsem.MedicationMention"
