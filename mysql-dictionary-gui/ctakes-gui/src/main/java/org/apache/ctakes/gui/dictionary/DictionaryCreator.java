@@ -67,7 +67,8 @@ final public class DictionaryCreator {
       LOGGER.info( "4. Select your desired Semantic Types in the right table." );
       LOGGER.info( "   Recommended Semantic types are pre-selected." );
       LOGGER.info( "5. Type a name for your dictionary." );
-      LOGGER.info( "6. Click \'Build Dictionary\'" );
+      LOGGER.info( "6. Select a database for your dictionary." );
+      LOGGER.info( "7. Click \'Build Dictionary\'" );
       LOGGER.info( "-  You can resize this log panel by clicking the top and dragging up or down." );
    }
 

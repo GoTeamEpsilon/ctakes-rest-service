@@ -9,6 +9,7 @@ import org.apache.ctakes.gui.dictionary.util.MysqlUtil;
 import org.apache.ctakes.gui.dictionary.util.JdbcUtil;
 import org.apache.ctakes.gui.dictionary.util.RareWordDbWriter;
 import org.apache.log4j.Logger;
+import org.apache.ctakes.gui.dictionary.DatabaseSource;
 
 import java.io.File;
 import java.sql.Connection;
@@ -43,6 +44,7 @@ final class DictionaryBuilder {
    static boolean buildDictionary( final String umlsDirPath,
                                    final String ctakesDirPath,
                                    final String dictionaryName,
+                                   final String dictionaryDestination,
                                    final Collection<String> wantedLanguages,
                                    final Collection<String> wantedSources,
                                    final Collection<String> wantedTargets,
@@ -51,7 +53,7 @@ final class DictionaryBuilder {
       final UmlsTermUtil umlsTermUtil = new UmlsTermUtil( DEFAULT_DATA_DIR );
       final Map<Long, Concept> conceptMap
             = parseAll( umlsTermUtil, umlsDirPath, wantedLanguages, wantedSources, wantedTargets, wantedTuis );
-      return writeDatabase( ctakesDirPath, dictionaryName, conceptMap );
+      return writeDatabase( ctakesDirPath, dictionaryName, dictionaryDestination, conceptMap );
    }
 
 
@@ -196,40 +198,44 @@ final class DictionaryBuilder {
 
    static private boolean writeDatabase( final String ctakesDirPath,
                                          final String dictionaryName,
+                                         final String dictionaryDestination,
                                          final Map<Long, Concept> conceptMap ) {
 
-      // TODO: UI Toggle
-      // TODO: ENV variables
-      final Connection connection = JdbcUtil.createDatabaseConnection(
-         MysqlUtil.URL_PREFIX,
-         "root",
-         "root"
-      );
+      Connection connection = null;
 
-      LOGGER.info( "Creating MySQL connection" );
-      if ( !MysqlUtil.createDatabase( connection ) ) {
-        return false;
+      LOGGER.info( "Selected dictionary destination " + dictionaryDestination );
+
+      if ( dictionaryDestination.equals( DatabaseSource.MYSQL.toString() ) ) {
+         // TODO: Configuration-driven variables
+         connection = JdbcUtil.createDatabaseConnection( MysqlUtil.URL_PREFIX,
+                                                         MysqlUtil.JBDC_STRING,
+                                                         "root",
+                                                         "root" );
+          
+         LOGGER.info( "Creating MySQL connection" );
+         if ( !MysqlUtil.createDatabase( connection ) ) {
+            return false;
+         }
+      } else if ( dictionaryDestination.equals( DatabaseSource.HSQL.toString() ) ) {
+         final File ctakesRoot = new File( ctakesDirPath );
+         String databaseDirPath = ctakesDirPath + "/" + CTAKES_APP_DB_PATH;
+         if ( Arrays.asList( ctakesRoot.list() ).contains( CTAKES_RES_MODULE ) ) {
+            databaseDirPath = ctakesDirPath + "/" + CTAKES_RES_DB_PATH;
+         }
+         final String url = HsqlUtil.URL_PREFIX + databaseDirPath.replace( '\\', '/' ) + "/" + dictionaryName + "/" +
+                            dictionaryName;
+         connection = JdbcUtil.createDatabaseConnection( url, HsqlUtil.JBDC_DRIVER, "SA", "" );
+
+         LOGGER.info( "Creating HSQLDB connection" );
+         if ( !HsqlUtil.createDatabase( connection ) ) {
+            return false;
+         }
+         if ( !DictionaryXmlWriter.writeXmlFile( databaseDirPath, dictionaryName ) ) {
+            return false;
+         }
       }
 
       LOGGER.info( "writing concepts..." );
-      RareWordDbWriter.writeConcepts( connection, conceptMap );
-      return true;
-      // final File ctakesRoot = new File( ctakesDirPath );
-      // String databaseDirPath = ctakesDirPath + "/" + CTAKES_APP_DB_PATH;
-      // if ( Arrays.asList( ctakesRoot.list() ).contains( CTAKES_RES_MODULE ) ) {
-      //    databaseDirPath = ctakesDirPath + "/" + CTAKES_RES_DB_PATH;
-      // }
-      // final String url = HsqlUtil.URL_PREFIX + databaseDirPath.replace( '\\', '/' ) + "/" + dictionaryName + "/" +
-      //                    dictionaryName;
-      // final Connection connection = JdbcUtil.createDatabaseConnection( url, "SA", "" );
-      // if ( !HsqlUtil.createDatabase( connection ) ) {
-      //    return false;
-      // }
-      // if ( !DictionaryXmlWriter.writeXmlFile( databaseDirPath, dictionaryName ) ) {
-      //    return false;
-      // }
-      // return RareWordDbWriter.writeConcepts( connection, conceptMap );
+      return RareWordDbWriter.writeConcepts( connection, conceptMap );
    }
-
-
 }
