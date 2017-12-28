@@ -11,29 +11,30 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
- * @author Matthew Vita
+ * @author SPF , chip-nlp
  * @version %I%
- * @since 12/13/2017
+ * @since 12/12/2015
  */
-final public class MysqlUtil {
+final public class HsqlUtil {
 
-   static private final Logger LOGGER = Logger.getLogger( "MysqlUtil" );
+   static private final Logger LOGGER = Logger.getLogger( "HsqlUtil" );
 
-   // TODO: Configuration-driven variables
-   static public final String URL_PREFIX = "jdbc:mysql://localhost:3306/umls";
+   static public final String URL_PREFIX = "jdbc:hsqldb:file:";
 
-   static public final String JBDC_STRING = "com.mysql.jdbc.Driver";
+   static public final String JBDC_DRIVER = "org.hsqldb.jdbcDriver";
 
-   private MysqlUtil() {}
+   private HsqlUtil() {
+   }
+
 
    static public boolean createDatabase( final Connection connection ) {
       try {
          // main table
          createTable( connection, "CUI_TERMS",
-               "CUI BIGINT", "RINDEX INT", "TCOUNT INT", "TEXT VARCHAR(255)", "RWORD VARCHAR(48)" );
+               "CUI BIGINT", "RINDEX INTEGER", "TCOUNT INTEGER", "TEXT VARCHAR(255)", "RWORD VARCHAR(48)" );
          createIndex( connection, "CUI_TERMS", "RWORD" );
          // tui table
-         createTable( connection, "TUI", "CUI BIGINT", "TUI INT" );
+         createTable( connection, "TUI", "CUI BIGINT", "TUI INTEGER" );
          createIndex( connection, "TUI", "CUI" );
          // preferred term table
          createTable( connection, "PREFTERM", "CUI BIGINT", "PREFTERM VARCHAR(511)" );
@@ -45,6 +46,7 @@ final public class MysqlUtil {
             createTable( connection, tableName, "CUI BIGINT", tableName + " " + jdbcClass );
             createIndex( connection, tableName, "CUI" );
          }
+         executeStatement( connection, "SET WRITE_DELAY 10" );
       } catch ( SQLException sqlE ) {
          LOGGER.error( sqlE.getMessage() );
          return false;
@@ -55,13 +57,13 @@ final public class MysqlUtil {
    static private void createTable( final Connection connection, final String tableName, final String... fieldNames )
          throws SQLException {
       final String fields = Arrays.stream( fieldNames ).collect( Collectors.joining( "," ) );
-      final String creator = "CREATE TABLE " + tableName.toLowerCase() + "(" + fields + ")";
+      final String creator = "CREATE MEMORY TABLE " + tableName + "(" + fields + ")";
       executeStatement( connection, creator );
    }
 
    static private void createIndex( final Connection connection, final String tableName,
                                     final String indexField ) throws SQLException {
-      final String indexer = "CREATE INDEX IDX_" + tableName + " ON " + tableName.toLowerCase() + "(" + indexField + ")";
+      final String indexer = "CREATE INDEX IDX_" + tableName + " ON " + tableName + "(" + indexField + ")";
       executeStatement( connection, indexer );
    }
 
