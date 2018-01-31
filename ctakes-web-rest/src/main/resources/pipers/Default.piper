@@ -13,3 +13,5 @@ load pipers/AttributeCleartkSubPipe.piper
 load pipers/TemporalSubPipe.piper
 // Coreferences
 load pipers/CorefSubPipe.piper
+add ContextAnnotator
+add LabValueFinder
