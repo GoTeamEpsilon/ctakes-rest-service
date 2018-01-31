@@ -10,6 +10,8 @@ import java.util.*;
 
 public class XMLParser {
 
+    Map<String, String> polarityMap = new HashMap<>();
+
     public Map<String, Map<String, List<String>>> parse(InputStream in) throws Exception {
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
         XMLStreamReader streamReader = inputFactory.createXMLStreamReader(in);
@@ -29,6 +31,7 @@ public class XMLParser {
         List<String> measurementList = new ArrayList<>();
         List<String> dateList = new ArrayList<>();
         List<String> anatomicalList = new ArrayList<>();
+        List<String> medicalList = new ArrayList<>();
 
         Map<String, String> disorderPosMap = new HashMap<>();
         Map<String, String> findingsPosMap = new HashMap<>();
@@ -43,6 +46,8 @@ public class XMLParser {
         Map<String, String> frequencyPosMap = new HashMap<>();
         Map<String, String> measurementPosMap = new HashMap<>();
         Map<String, String> anatomicalPosMap = new HashMap<>();
+        Map<String, String> medicalPosMap = new HashMap<>();
+
 
         Map<String, List<String>> disorderDetailMap = new HashMap<>();
         Map<String, List<String>> findingsDetailMap = new HashMap<>();
@@ -57,12 +62,13 @@ public class XMLParser {
         Map<String, List<String>> measurementDetailMap = new HashMap<>();
         Map<String, List<String>> dateDetailMap = new HashMap<>();
         Map<String, List<String>> anatomicalDetailMap = new HashMap<>();
+        Map<String, List<String>> medicalDetailMap = new HashMap<>();
 
         while (streamReader.hasNext()) {
             if (streamReader.isStartElement()) {
                 if (analysisText == null) {
                     if (streamReader.getLocalName().equalsIgnoreCase("Sofa")) {
-                        analysisText = streamReader.getAttributeValue(4);
+                        analysisText = streamReader.getAttributeValue(null,"sofaString");
                     }
                 }
                 try {
@@ -79,16 +85,17 @@ public class XMLParser {
                     dateList = extractData(streamReader, analysisText, SemanticNames.DateAnnotation.name(), datePosMap, dateList, ontologyArrayMap);
                     measurementList = extractData(streamReader, analysisText, SemanticNames.MeasurementAnnotation.name(), measurementPosMap, measurementList, ontologyArrayMap);
                     anatomicalList = extractData(streamReader, analysisText, SemanticNames.AnatomicalSiteMention.name(), anatomicalPosMap, anatomicalList, ontologyArrayMap);
+                    medicalList = extractData(streamReader, analysisText, SemanticNames.MedicationMention.name(), medicalPosMap, medicalList, ontologyArrayMap);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 if (streamReader.getLocalName().equalsIgnoreCase("UmlsConcept")) {
-                    String id = streamReader.getAttributeValue(0);
+                    String id = streamReader.getAttributeValue(null, "id");
                     List<String> umlsDetailList = new ArrayList<>();
-                    umlsDetailList.add("codingScheme: " + streamReader.getAttributeValue(1));
-                    umlsDetailList.add("code: " + streamReader.getAttributeValue(2));
-                    umlsDetailList.add("cui: " + streamReader.getAttributeValue(5));
-                    umlsDetailList.add("tui: " + streamReader.getAttributeValue(6));
+                    umlsDetailList.add("codingScheme: " + streamReader.getAttributeValue(null, "codingScheme"));
+                    umlsDetailList.add("code: " + streamReader.getAttributeValue(null, "code"));
+                    umlsDetailList.add("cui: " + streamReader.getAttributeValue(null, "cui"));
+                    umlsDetailList.add("tui: " + streamReader.getAttributeValue(null, "tui"));
                     umlsConceptMap.put(id, umlsDetailList);
                 }
             }
@@ -108,12 +115,14 @@ public class XMLParser {
         measurementDetailMap = processUMLSDetail(ontologyArrayMap, umlsConceptMap, measurementDetailMap, measurementList, measurementPosMap);
         dateDetailMap = processUMLSDetail(ontologyArrayMap, umlsConceptMap, dateDetailMap, dateList, datePosMap);
         anatomicalDetailMap = processUMLSDetail(ontologyArrayMap, umlsConceptMap, anatomicalDetailMap, anatomicalList, anatomicalPosMap);
+        medicalDetailMap = processUMLSDetail(ontologyArrayMap, umlsConceptMap, medicalDetailMap, medicalList, medicalPosMap);
 
         Map<String, Map<String, List<String>>> responseMap = new HashMap<>();
         responseMap.put(SemanticNames.DiseaseDisorderMention.name(), disorderDetailMap);
         responseMap.put(SemanticNames.SignSymptomMention.name(),findingsDetailMap);
         responseMap.put(SemanticNames.ProcedureMention.name(),procedureDetailMap);
         responseMap.put(SemanticNames.AnatomicalSiteMention.name(),anatomicalDetailMap);
+        responseMap.put(SemanticNames.MedicationMention.name(),medicalDetailMap);
         responseMap.put(SemanticNames.TimeMention.name(),timeDetailMap);
         responseMap.put(SemanticNames.FractionStrengthAnnotation.name(),fractionStrengthDetailMap);
         responseMap.put(SemanticNames.DrugChangeStatusAnnotation.name(),drugChangeStatusDetailMap);
@@ -136,6 +145,9 @@ public class XMLParser {
             }
             semanticDetailsList.add("start: " + posDetail[0]);
             semanticDetailsList.add("end: " + posDetail[1]);
+            if(polarityMap.get(semanticName) != null) {
+                semanticDetailsList.add("polarity: " + polarityMap.get(semanticName));
+            }
             String ontologyArrayRawString = ontologyArrayMap.get(semanticName);
             String[] ontologyStringArr = ontologyArrayRawString.split("\\s");
             for (String ontologyString : ontologyStringArr) {
@@ -154,9 +166,10 @@ public class XMLParser {
     private List<String> extractData(XMLStreamReader streamReader, String analysisText, String mentionName, Map<String, String> semanticPosMap,
                                      List<String> semanticList, Map<String, String> ontologyArrayMap) {
         if (streamReader.getLocalName().equalsIgnoreCase(mentionName)) {
-            Integer start = Integer.parseInt(streamReader.getAttributeValue(2));
-            Integer end = Integer.parseInt(streamReader.getAttributeValue(3));
-            String ontologyConceptArr = streamReader.getAttributeValue(5);
+            Integer start = Integer.parseInt(streamReader.getAttributeValue(null, "begin"));
+            Integer end = Integer.parseInt(streamReader.getAttributeValue(null, "end"));
+            String ontologyConceptArr = streamReader.getAttributeValue(null, "ontologyConceptArr");
+            String polarity = streamReader.getAttributeValue(null, "polarity");
             String chunk = analysisText.substring(start, end);
             String chunkUpper = chunk.toUpperCase();
             boolean isFound = false;
@@ -185,6 +198,9 @@ public class XMLParser {
                                         semanticPosMap.remove(semanticTerm);
                                         semanticPosMap.put(chunkUpper, start + "," + end);
                                         isFound = true;
+                                        if(polarity!=null) {
+                                            polarityMap.put(chunkUpper,polarity);
+                                        }
                                         break;
                                     }
                                 }
@@ -194,6 +210,9 @@ public class XMLParser {
                 }
                 if (!isFound) {
                     semanticList.add(chunkUpper);
+                    if(polarity!=null) {
+                        polarityMap.put(chunkUpper,polarity);
+                    }
                     ontologyArrayMap.put(chunkUpper, ontologyConceptArr);
                     //System.out.println("mentionName -> " + mentionName + " part -> " + chunkUpper + " -- " + start + "," + end);
                     semanticPosMap.put(chunkUpper, start + "," + end);
@@ -208,15 +227,6 @@ public class XMLParser {
         DiseaseDisorderMention, SignSymptomMention, ProcedureMention, TimeMention,
         AnatomicalSiteMention, FractionStrengthAnnotation, DrugChangeStatusAnnotation,
         StrengthUnitAnnotation, StrengthAnnotation, RouteAnnotation, FrequencyUnitAnnotation, DateAnnotation,
-        MeasurementAnnotation
+        MeasurementAnnotation, MedicationMention
     }
-
-    /*public static void main(String args[]) throws Exception {
-        InputStream stream = new FileInputStream("D:\\Gandhi\\github\\cTAKES\\Xml2Json\\Result.xml");
-        XMLParser parser = new XMLParser();
-        Map<String, Map<String, List<String>>> outputMap = parser.parse(stream);
-        for (Map.Entry<String, Map<String, List<String>>> entry : outputMap.entrySet()) {
-            System.out.println(entry.getKey() + " --> " + ((Map)entry.getValue()).toString());
-        }
-    }*/
 }
