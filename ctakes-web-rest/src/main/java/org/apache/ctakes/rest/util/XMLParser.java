@@ -149,14 +149,19 @@ public class XMLParser {
                 semanticDetailsList.add("polarity: " + polarityMap.get(semanticName));
             }
             String ontologyArrayRawString = ontologyArrayMap.get(semanticName);
-            String[] ontologyStringArr = ontologyArrayRawString.split("\\s");
-            for (String ontologyString : ontologyStringArr) {
-                List umlsDetList = umlsConceptMap.get(ontologyString);
-                if(umlsDetList != null && umlsDetList.size() > 0) {
-                    if (!umlsDetList.contains(semanticDetailsList)) {
-                        semanticDetailsList.add(umlsDetList.toString());
+            if(ontologyArrayRawString != null) {
+                String[] ontologyStringArr = ontologyArrayRawString.split("\\s");
+                for (String ontologyString : ontologyStringArr) {
+                    List umlsDetList = umlsConceptMap.get(ontologyString);
+                    if (umlsDetList != null && umlsDetList.size() > 0) {
+                        if (!umlsDetList.contains(semanticDetailsList)) {
+                            semanticDetailsList.add(umlsDetList.toString());
+                        }
                     }
+                    semanticDetailsMap.put(semanticName, semanticDetailsList);
                 }
+            }
+            else {
                 semanticDetailsMap.put(semanticName, semanticDetailsList);
             }
         }
