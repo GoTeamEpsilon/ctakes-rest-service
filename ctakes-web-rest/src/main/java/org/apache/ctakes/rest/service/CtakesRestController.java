@@ -21,7 +21,6 @@ package org.apache.ctakes.rest.service;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.ctakes.core.pipeline.PipelineBuilder;
 import org.apache.ctakes.core.pipeline.PiperFileReader;
-import org.apache.ctakes.core.resource.FileLocator;
 import org.apache.ctakes.rest.util.XMLParser;
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
@@ -31,13 +30,13 @@ import org.apache.uima.cas.impl.XmiCasSerializer;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.JCasPool;
 import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -50,52 +49,72 @@ import java.util.Map;
 public class CtakesRestController {
 
     private static final Logger LOGGER = Logger.getLogger(CtakesRestController.class);
-    private static final String PIPER_FILE_PATH = "pipers/Default.piper";
-    private AnalysisEngine engine;
-    private JCasPool pool;
+    private static final String DEFAULT_PIPER_FILE_PATH = "pipers/Default.piper";
+    private static final String FULL_PIPER_FILE_PATH = "pipers/Full.piper";
+    private static final Map<String, PipelineRunner> _pipelineRunners = new HashMap<>();
 
     @PostConstruct
     public void init() throws ServletException {
-        LOGGER.info("Initializing analysis engine and jcas pool");
-        try {
-            final File inputFile = FileLocator.getFile(PIPER_FILE_PATH);
-            PiperFileReader reader = new PiperFileReader(inputFile.getAbsolutePath());
-            PipelineBuilder builder = reader.getBuilder();
-            AnalysisEngineDescription analysisEngineDesc = builder.getAnalysisEngineDesc();
-            engine = UIMAFramework.produceAnalysisEngine(analysisEngineDesc);
-            pool = new JCasPool( 100, engine );
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new ServletException(e);
-        }
+        LOGGER.info("Initializing analysis engines and jcas pools");
+        _pipelineRunners.put("Default", new PipelineRunner(DEFAULT_PIPER_FILE_PATH));
+        _pipelineRunners.put("Full", new PipelineRunner(FULL_PIPER_FILE_PATH));
     }
 
-    @RequestMapping(value="/analyze", method = RequestMethod.POST)
+    @RequestMapping(value = "/analyze", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Map<String,List<String>>> getAnalyzedJSON(@RequestBody String analysisText)
-            throws ServletException, IOException {
-        Map<String,Map<String,List<String>>>  resultMap = null;
-        if (analysisText != null && analysisText.trim().length() > 0) {
-            try {
-                JCas jcas = pool.getJCas(-1);
-                jcas.setDocumentText(analysisText);
-                engine.process(jcas);
-                resultMap = formatResults(jcas);
-                pool.releaseJCas(jcas);
-            } catch (Exception e) {
-                e.printStackTrace();
-                throw new ServletException(e);
-            }
+    public Map<String, Map<String, List<String>>> getAnalyzedJSON(@RequestBody String analysisText, @RequestParam("pipeline") String pipelineParam)
+            throws Exception {
+        String pipeline = "Default";
+        if (pipelineParam != null && "Full".equals(pipelineParam)) {
+            pipeline = pipelineParam;
         }
-        return resultMap;
+        final PipelineRunner runner = _pipelineRunners.get(pipeline);
+        return runner.process(analysisText);
+
     }
 
-    private Map<String,Map<String,List<String>>>  formatResults(JCas jcas) throws Exception {
+    static private Map<String, Map<String, List<String>>> formatResults(JCas jcas) throws Exception {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         XmiCasSerializer.serialize(jcas.getCas(), output);
         String outputStr = output.toString();
-        //Files.write(Paths.get("Result.xml"), outputStr.getBytes());
+        Files.write(Paths.get("Result.xml"), outputStr.getBytes());
         XMLParser parser = new XMLParser();
         return parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
+    }
+
+    static private final class PipelineRunner {
+        private final AnalysisEngine _engine;
+        private final JCasPool _pool;
+
+        private PipelineRunner(final String piperPath) throws ServletException {
+            try {
+                PiperFileReader reader = new PiperFileReader(piperPath);
+                PipelineBuilder builder = reader.getBuilder();
+                AnalysisEngineDescription pipeline = builder.getAnalysisEngineDesc();
+                _engine = UIMAFramework.produceAnalysisEngine(pipeline);
+                _pool = new JCasPool(10, _engine);
+            } catch (Exception e) {
+                LOGGER.error("Error loading pipers");
+                throw new ServletException(e);
+            }
+        }
+
+        public Map<String, Map<String, List<String>>> process(final String text) throws ServletException {
+            JCas jcas = null;
+            Map<String, Map<String, List<String>>> resultMap = null;
+            if (text != null) {
+                try {
+                    jcas = _pool.getJCas(-1);
+                    jcas.setDocumentText(text);
+                    _engine.process(jcas);
+                    resultMap = formatResults(jcas);
+                    _pool.releaseJCas(jcas);
+                } catch (Exception e) {
+                    LOGGER.error("Error processing Analysis engine");
+                    throw new ServletException(e);
+                }
+            }
+            return resultMap;
+        }
     }
 }
