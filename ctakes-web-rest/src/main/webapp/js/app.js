@@ -2,7 +2,7 @@ $(document).ready(function() {
      $('#fire').click(function() {
         try {
             $.ajax({
-				url: myContextPath + "/service/analyze",
+				url: myContextPath + "/service/analyze?pipeline=Default",
 				type: "POST",
 				crossDomain: true,
 				cache: false,
