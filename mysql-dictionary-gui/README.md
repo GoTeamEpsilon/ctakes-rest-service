@@ -4,10 +4,11 @@ Tweaks to get MySQL supported out of the box for the GUI tool. Ideally this code
 
 ## Setup
 
-1. `cd` to the root directory of this project run `./install-ctakes-gui.sh`
-2. `cd ctakes-codebase-area/ctakes-distribution/target/`
-3. `unzip apache-ctakes-4.0.1-SNAPSHOT-bin.zip`
-4. `./apache-ctakes-4.0.1-SNAPSHOT/bin/runDictionaryCreator.sh`
+1. Run `CREATE SCHEMA umls;` on your MySQL database
+2. `cd` to the root directory of this project run `./install-ctakes-gui.sh`
+3. `cd ctakes-codebase-area/ctakes-distribution/target/`
+4. `unzip apache-ctakes-4.0.1-SNAPSHOT-bin.zip`
+5. `./apache-ctakes-4.0.1-SNAPSHOT/bin/runDictionaryCreator.sh`
 
 ## Todo
 
