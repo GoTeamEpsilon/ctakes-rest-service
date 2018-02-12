@@ -39,6 +39,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 
 /*
@@ -51,22 +52,27 @@ public class CtakesRestController {
     private static final Logger LOGGER = Logger.getLogger(CtakesRestController.class);
     private static final String DEFAULT_PIPER_FILE_PATH = "pipers/Default.piper";
     private static final String FULL_PIPER_FILE_PATH = "pipers/Full.piper";
+    private static final String DEFAULT_PIPELINE = "Default";
+    private static final String FULL_PIPELINE = "Full";
     private static final Map<String, PipelineRunner> _pipelineRunners = new HashMap<>();
 
     @PostConstruct
     public void init() throws ServletException {
         LOGGER.info("Initializing analysis engines and jcas pools");
-        _pipelineRunners.put("Default", new PipelineRunner(DEFAULT_PIPER_FILE_PATH));
-        _pipelineRunners.put("Full", new PipelineRunner(FULL_PIPER_FILE_PATH));
+        _pipelineRunners.put(DEFAULT_PIPELINE, new PipelineRunner(DEFAULT_PIPER_FILE_PATH));
+        _pipelineRunners.put(FULL_PIPELINE, new PipelineRunner(FULL_PIPER_FILE_PATH));
     }
 
     @RequestMapping(value = "/analyze", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Map<String, List<String>>> getAnalyzedJSON(@RequestBody String analysisText, @RequestParam("pipeline") String pipelineParam)
+    public Map<String, Map<String, List<String>>> getAnalyzedJSON(@RequestBody String analysisText,
+                                                                  @RequestParam("pipeline") Optional<String> pipelineOptParam)
             throws Exception {
-        String pipeline = "Default";
-        if (pipelineParam != null && "Full".equals(pipelineParam)) {
-            pipeline = pipelineParam;
+        String pipeline = DEFAULT_PIPELINE;
+        if(pipelineOptParam.isPresent()) {
+            if(FULL_PIPELINE.equalsIgnoreCase(pipelineOptParam.get())) {
+                pipeline = FULL_PIPELINE;
+            }
         }
         final PipelineRunner runner = _pipelineRunners.get(pipeline);
         return runner.process(analysisText);
