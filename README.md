@@ -10,6 +10,7 @@ _This software provided to the open source healthcare community by:_
 - Sandeep B G (Solutions Architect)
 - Daniel E (Solutions Engineer)
 - Matthew V (Software Engineer)
+- Shane C (Software Engineer)
 
 _Thanks to the following people for support and guidance:_
 

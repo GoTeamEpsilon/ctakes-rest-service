@@ -30,9 +30,9 @@ Though JdbcConnectionFactory will attempt to "find" a db based upon the parent d
 for the sake of ide ease-of-use, the user should be aware of these hsql limitations.
 -->
          <property key="jdbcDriver" value="com.mysql.jdbc.Driver"/>
-         <property key="jdbcUrl" value="jdbc:mysql://192.168.112.225:3306/umls?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false"/>
+         <property key="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/umls?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false"/>
          <property key="jdbcUser" value="root"/>
-         <property key="jdbcPass" value="admin123"/>
+         <property key="jdbcPass" value="pass"/>
          <property key="rareWordTable" value="cui_terms"/>
          <property key="umlsUrl" value="https://uts-ws.nlm.nih.gov/restful/isValidUMLSUser"/>
          <property key="umlsVendor" value="NLM-6515182895"/>
@@ -48,9 +48,9 @@ for the sake of ide ease-of-use, the user should be aware of these hsql limitati
       <implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>
       <properties>
          <property key="jdbcDriver" value="com.mysql.jdbc.Driver"/>
-         <property key="jdbcUrl" value="jdbc:mysql://192.168.112.225:3306/umls?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false"/>
+         <property key="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/umls?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false"/>
          <property key="jdbcUser" value="root"/>
-         <property key="jdbcPass" value="admin123"/>
+         <property key="jdbcPass" value="pass"/>
          <property key="umlsUrl" value="https://uts-ws.nlm.nih.gov/restful/isValidUMLSUser"/>
          <property key="umlsVendor" value="NLM-6515182895"/>
          <property key="umlsUser" value="CHANGE_ME"/>

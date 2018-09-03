@@ -1,15 +1,20 @@
-// Advanced Tokenization: Regex sectionization, BIO Sentence Detector(lumper), Paragraphs,Lists 
-load pipers/AdvancedTokenizerPipeline.piper 
+// Commands and parameters to create a default plaintext document processing pipeline with UMLS lookup
+
+// set the thread count
+threads 3
+
+// Load a simple token processing pipeline from another pipeline file
+load pipers/TsDefaultTokenizerPipeline
+
+// Add non-core annotators
 add ContextDependentTokenizerAnnotator
-add POSTagger
-// Chunkers
-load pipers/ChunkerSubPipe.piper
+addDescription POSTagger
+
+// Add Chunkers
+load pipers/TsChunkerSubPipe
+
 // Default fast dictionary lookup
-load pipers/DictionarySubPipe.piper
-add org.apache.ctakes.drugner.ae.DrugMentionAnnotator
-// Cleartk Entity Attributes
-load pipers/AttributeCleartkSubPipe.piper
-// Temporal
-load pipers/TemporalSubPipe.piper
-// Coreferences
-load pipers/CorefSubPipe.piper
+load pipers/TsDictionarySubPipe
+
+// Add Cleartk Entity Attribute annotators
+load pipers/TsAttributeCleartkSubPipe

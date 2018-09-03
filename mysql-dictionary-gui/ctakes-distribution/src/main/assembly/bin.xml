@@ -1,0 +1,250 @@
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+	
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>bin</id>
+	<formats>
+		<format>tar.gz</format> 
+		<format>zip</format>
+	</formats>
+
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<baseDirectory>/apache-ctakes-${project.version}</baseDirectory>
+
+	<dependencySets>
+		<dependencySet>
+			<includes>
+				<include>org.apache.ctakes:ctakes-assertion</include>
+				<include>org.apache.ctakes:ctakes-assertion-zoner</include>
+				<include>org.apache.ctakes:ctakes-chunker</include>
+				<include>org.apache.ctakes:ctakes-clinical-pipeline</include>
+				<include>org.apache.ctakes:ctakes-constituency-parser</include>
+				<include>org.apache.ctakes:ctakes-context-tokenizer</include>
+				<include>org.apache.ctakes:ctakes-core</include>
+				<include>org.apache.ctakes:ctakes-coreference</include>
+				<include>org.apache.ctakes:ctakes-dependency-parser</include>
+				<include>org.apache.ctakes:ctakes-dictionary-lookup</include>
+				<include>org.apache.ctakes:ctakes-dictionary-lookup-fast</include>				
+				<include>org.apache.ctakes:ctakes-drug-ner</include>
+				<include>org.apache.ctakes:ctakes-gui</include>
+				<include>org.apache.ctakes:ctakes-lvg</include>
+				<include>org.apache.ctakes:ctakes-ne-contexts</include>
+				<include>org.apache.ctakes:ctakes-pos-tagger</include>
+				<include>org.apache.ctakes:ctakes-preprocessor</include>
+				<include>org.apache.ctakes:ctakes-relation-extractor</include>
+				<include>org.apache.ctakes:ctakes-side-effect</include>
+				<include>org.apache.ctakes:ctakes-smoking-status</include>
+				<include>org.apache.ctakes:ctakes-template-filler</include>
+				<include>org.apache.ctakes:ctakes-temporal</include>
+				<include>org.apache.ctakes:ctakes-type-system</include>
+				<include>org.apache.ctakes:ctakes-utils</include>
+				<include>org.apache.ctakes:ctakes-ytex</include>
+				<include>org.apache.ctakes:ctakes-ytex-uima</include>
+				<include>org.apache.ctakes:ctakes-ytex-web</include>
+				<include>org.apache.ctakes:ctakes-examples</include>
+				<include>mysql:mysql-connector-java</include>
+			</includes>
+			
+            <excludes>
+	        	<exclude>net.sourceforge.ctakesresources:*</exclude>
+	        	<!-- exclude assertion and lvg - they still need to be unpacked and not read from classpath yet -->
+	        	<exclude>org.apache.ctakes:ctakes-assertion-res</exclude>
+	        	<exclude>org.apache.ctakes:ctakes-lvg-res</exclude>
+               <!-- Exclude fast-res - it should be unpacked in the resources directory -->
+               <exclude>org.apache.ctakes:ctakes-dictionary-lookup-fast-res</exclude>
+               <!-- exclude non-asf compliant dependencies used by ytex -->
+				<exclude>org.hibernate:*</exclude>
+				<exclude>nz.ac.waikato.cms.weka:*</exclude>
+				<exclude>com.microsoft.sqlserver:*</exclude>
+				<exclude>oracle.jdbc:*</exclude>
+	        </excludes>			
+			<unpack>false</unpack>
+			<useProjectArtifact>false</useProjectArtifact>
+			<useTransitiveFiltering>true</useTransitiveFiltering>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+			<outputDirectory>lib</outputDirectory>
+		</dependencySet>
+	</dependencySets>
+
+	<fileSets>
+		<!--  The Type System needs to exist outside the lib/*.jar file.  Otherwise it cannot be used with the CVD.  -->
+		<fileSet>
+			<directory>../ctakes-clinical-pipeline-res/src/main/resources</directory>
+			<outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		</fileSet>
+		<fileSet>
+			<directory>../ctakes-ne-contexts-res/src/main/resources</directory>
+			<outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		</fileSet>
+      <fileSet>
+         <directory>../ctakes-examples-res/src/main/resources</directory>
+         <outputDirectory>resources</outputDirectory>
+         <fileMode>644</fileMode>
+         <directoryMode>755</directoryMode>
+      </fileSet>
+		<fileSet>
+			<directory>../ctakes-type-system/src/main/resources</directory>
+			<outputDirectory>resources</outputDirectory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		</fileSet>
+		<fileSet>
+		    <directory>../ctakes-assertion/src/main/resources</directory>
+		    <outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+    	</fileSet>
+		<fileSet>
+		    <directory>../ctakes-assertion-res/src/main/resources</directory>
+		    <outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+    	</fileSet>    
+		<fileSet>
+		    <directory>../ctakes-assertion-zoner/src/main/resources</directory>
+		    <outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+    	</fileSet>
+		<fileSet>
+		    <directory>../ctakes-assertion-zoner-res/src/main/resources</directory>
+		    <outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+    	</fileSet> 
+		<fileSet>
+		    <directory>../ctakes-dictionary-lookup-res/src/main/resources</directory>
+		    <outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+    	</fileSet>
+      <fileSet>
+         <directory>../ctakes-dictionary-lookup-fast-res/src/main/resources</directory>
+         <outputDirectory>resources</outputDirectory>
+         <fileMode>644</fileMode>
+         <directoryMode>755</directoryMode>
+      </fileSet>
+      <fileSet>
+         <directory>../ctakes-gui-res/src/main/resources</directory>
+         <outputDirectory>resources</outputDirectory>
+         <fileMode>644</fileMode>
+         <directoryMode>755</directoryMode>
+      </fileSet>
+      <fileSet>
+		    <directory>../ctakes-lvg-res/src/main/resources</directory>
+		    <outputDirectory>resources</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+    	</fileSet>
+		<fileSet>
+			<directory>../ctakes-chunker-res/src/main/resources/org/apache/ctakes/chunker/pipeline</directory>
+			<outputDirectory>resources/org/apache/ctakes/chunker/pipeline</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		</fileSet>
+		<fileSet>
+			<directory>../ctakes-core-res/src/main/resources/org/apache/ctakes/core/pipeline</directory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+			<includes>
+				<include>DefaultTokenizerPipeline.piper</include>
+			</includes>
+			<outputDirectory>resources/org/apache/ctakes/core/pipeline</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/bin</directory>
+			<fileMode>755</fileMode>
+			<directoryMode>755</directoryMode>
+			<outputDirectory>bin</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/config</directory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+			<outputDirectory>config</outputDirectory>
+		</fileSet>
+		<!-- Copy a default log4j config that could be overridden during runtime -->
+		<fileSet>
+			<directory>../ctakes-core-res/src/main/resources</directory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+			<includes>
+				<include>log4j.xml</include>
+			</includes>
+			<outputDirectory>config</outputDirectory>
+		</fileSet>
+		<!-- Copy all of the XML Descriptors. Temp Preserving this structure so
+			that the relative paths still work. -->
+		<fileSet>
+			<directory>../</directory>
+			<outputDirectory>desc</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		      <includes>
+		        <include>*/desc/**</include>
+		      </includes>			
+		</fileSet>	
+		<fileSet>
+			<directory>../ctakes-ytex-web/src/main/webapp</directory>
+			<outputDirectory>desc/ctakes-ytex-web</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		</fileSet>
+		<fileSet>
+			<directory>../ctakes-ytex/scripts</directory>
+			<outputDirectory>bin/ctakes-ytex/scripts</outputDirectory>
+			<fileMode>644</fileMode>
+			<directoryMode>755</directoryMode>
+		</fileSet>
+	</fileSets>
+	<files>
+		<file>
+			<source>../README</source>
+			<outputDirectory/>
+		</file>
+		<file>
+			<source>RELEASE_NOTES.html</source>
+			<outputDirectory/>
+		</file>
+		<file>
+			<source>LICENSE</source>
+			<outputDirectory/>
+		</file>
+		<file>
+			<source>NOTICE</source>
+			<outputDirectory/>
+		</file>
+		<!--<file>-->
+			<!--<source>target/issuesFixed/**</source>-->
+			<!--<outputDirectory/>-->
+		<!--</file>-->
+	</files>
+</assembly>

@@ -7,9 +7,18 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <servlet>
         <servlet-name>ctakes-rest-service</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>ctakes-rest-service</servlet-name>
         <url-pattern>/service/*</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>CORS</filter-name>
+        <filter-class>org.apache.ctakes.rest.filter.CORSFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CORS</filter-name>
+        <url-pattern>/service/*</url-pattern>
+    </filter-mapping>
 </web-app>
