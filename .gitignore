@@ -1,6 +1,6 @@
 tomcat
 trunk
-ctakes-codebase-area/*
+ctakes-build-area/*
 .project
 org
 data
