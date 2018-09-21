@@ -19,22 +19,17 @@ svn export 'https://svn.apache.org/repos/asf/ctakes/branches/ctakes-4.0.0/'
 6. Build the appropriate cTAKES modules with the following:
 
 ```
-cd ctakes-4.0.0/ctakes-assertion-zoner  
-mvn install -Dmaven.test.skip=true
-cd ../ctakes-distribution
+cd ctakes-4.0.0/  
 mvn install -Dmaven.test.skip=true
 ```
 
-7. Navigate back to the main codebase and update your UMLS credentials in the following files:
+7. Navigate back to the main codebase and build:
 ```
-cd ../../../ctakes-web-rest
-nano src/main/resources/pipers/DictionarySubPipe.piper
-nano src/main/resources/pipers/TsDictionarySubPipe.piper
+cd ../../ctakes-web-rest
+mvn install
 ```
 
-8. Build the codebase: `mvn install`.
-
-9. Deploy the War file:
+8. Deploy the War file:
 
 ```
 sudo mv target/ctakes-web-rest.war /var/lib/tomcat8/webapps
@@ -44,9 +39,9 @@ sudo unzip /var/lib/tomcat8/webapps/ctakes-web-rest.war
 # tail -f /var/log/tomcat8/catalina.out
 ```
 
-10. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service.
+9. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service.
 
-11. To test using a REST client like Postman, use the following URL: ` http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default` (ensure to use POST method and RAW response)
+10. To test using a REST client like Postman, use the following URL: ` http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default` (ensure to use POST method and RAW response)
 
 
 ## License
