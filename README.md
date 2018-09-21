@@ -6,8 +6,8 @@ The goal of this solution is to provide a JSON-based REST service to process uns
 
 1. Install the latest Java.
 2. Install and setup MySQL on port 3066 with the username/password set to root/root (can be changed in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`).
-3. Load in all SQL scripts in `./sno_rx_16ab_db`. This process will take several hours.
-4. Git clone this repository: `git clone git@github.com:GoTeamEpsilon/ctakes-rest-service.git`.
+3. Git clone this repository: `git clone git@github.com:GoTeamEpsilon/ctakes-rest-service.git`.
+4. Load in all SQL scripts in `./sno_rx_16ab_db`. This process will take several hours.
 5. `cd` into the repository and run the following to pull down cTAKES 4.0.0:
 
 ```
