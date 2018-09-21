@@ -1,8 +1,53 @@
 # cTAKES Rest Service
 
-*NOTE: This is alpha software. Please note that the team is returning to finish this work and appreciates the community's patience.*
-
 The goal of this solution is to provide a JSON-based REST service to process unstructured clinical text through a smart natural language processing system in a fast, accurate, and easy to setup way.
+
+## Install
+
+1. Install the latest Java.
+2. Install and setup MySQL on port 3066 with the username/password set to root/root (can be changed in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`).
+3. Load in all SQL scripts in `./sno_rx_16ab_db`. This process will take several hours.
+4. Git clone this repository: `git clone git@github.com:GoTeamEpsilon/ctakes-rest-service.git`.
+5. `cd` into the repository and run the following to pull down cTAKES 4.0.0:
+
+```
+mkdir ctakes-codebase-area
+cd ctakes-codebase-area
+svn export 'https://svn.apache.org/repos/asf/ctakes/branches/ctakes-4.0.0/'
+```
+
+6. Build the appropriate cTAKES modules with the following:
+
+```
+cd ctakes-4.0.0/ctakes-assertion-zoner  
+mvn install -Dmaven.test.skip=true
+cd ../ctakes-distribution
+mvn install -Dmaven.test.skip=true
+```
+
+7. Navigate back to the main codebase and update your UMLS credentials in the following files:
+```
+cd ../../../ctakes-web-rest
+nano src/main/resources/pipers/DictionarySubPipe.piper
+nano src/main/resources/pipers/TsDictionarySubPipe.piper
+```
+
+8. Build the codebase: `mvn install`.
+
+9. Deploy the War file:
+
+```
+sudo mv target/ctakes-web-rest.war /var/lib/tomcat8/webapps
+sudo unzip /var/lib/tomcat8/webapps/ctakes-web-rest.war
+
+# useful for debugging (uncomment):
+# tail -f /var/log/tomcat8/catalina.out
+```
+
+10. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service.
+
+11. To test using a REST client like Postman, use the following URL: ` http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default` (ensure to use POST method and RAW response)
+
 
 ## License
 
