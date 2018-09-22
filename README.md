@@ -4,22 +4,22 @@ The goal of this solution is to provide a JSON-based REST service to process uns
 
 ## Install
 
-1. Install the latest Java, MySQL, Subversion, and Git.
+1. Install the latest versions of Java, MySQL, Tomcat, Maven, Subversion, and Git.
 2. Setup MySQL on port 3066 with the username/password set to root/root (you can use custom configurations and specify them in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`).
 3. Git clone this repository: `git clone git@github.com:GoTeamEpsilon/ctakes-rest-service.git`.
 4. Load in all SQL scripts in `./sno_rx_16ab_db`. This process will take several hours.
-5. `cd` into the repository and run the following to pull down cTAKES 4.0.0:
+5. `cd` into the repository and run the following to pull down cTAKES:
 
 ```
 mkdir ctakes-codebase-area
 cd ctakes-codebase-area
-svn export 'https://svn.apache.org/repos/asf/ctakes/branches/ctakes-4.0.0/'
+svn export 'https://svn.apache.org/repos/asf/ctakes/trunk'
 ```
 
 6. Build the appropriate cTAKES modules with the following:
 
 ```
-cd ctakes-4.0.0/  
+cd trunk/  
 mvn install -Dmaven.test.skip=true
 ```
 
