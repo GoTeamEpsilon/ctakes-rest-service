@@ -35,7 +35,6 @@ mvn install
 
 ```
 sudo mv target/ctakes-web-rest.war /var/lib/tomcat8/webapps
-sudo unzip /var/lib/tomcat8/webapps/ctakes-web-rest.war
 
 # useful for debugging (uncomment):
 # tail -f /var/log/tomcat8/catalina.out
