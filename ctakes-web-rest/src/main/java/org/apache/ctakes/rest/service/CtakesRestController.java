@@ -83,7 +83,7 @@ public class CtakesRestController {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         XmiCasSerializer.serialize(jcas.getCas(), output);
         String outputStr = output.toString();
-        Files.write(Paths.get("Result.xml"), outputStr.getBytes());
+        // For debugging: Files.write(Paths.get("Result.xml"), outputStr.getBytes());
         XMLParser parser = new XMLParser();
         return parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
     }
