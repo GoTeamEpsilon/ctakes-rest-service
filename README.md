@@ -2,7 +2,11 @@
 
 The goal of this solution is to provide a JSON-based REST service to process unstructured clinical text through a smart natural language processing system in a fast, accurate, and easy to setup way.
 
+![img](./demo.png)
+
 ## Install
+
+_(Based on Ubuntu 18)_
 
 1. Install Java 8, MySQL 5.7, Tomcat 8, Maven 3.5, Subversion, and Git.
 2. Setup MySQL on port 3066 with the username/password set to root/pass (you can use custom configurations and specify them in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`).
