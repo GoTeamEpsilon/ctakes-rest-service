@@ -12,7 +12,7 @@ _(Based on Ubuntu 18)_
 
 ```bash
 sudo apt-get update
-apt-get install default-jdk
+sudo apt-get install default-jdk
 sudo apt-get install mysql-server
 sudo mysql_secure_installation
 ```
@@ -35,7 +35,9 @@ sudo apt-get install git
 5. Load in all SQL scripts in `./sno_rx_16ab_db`. This process may take several hours.
 
 ```bash
+cd ./sno_rx_16ab_db
 for fname in *.sql; do sudo mysql -u root < $fname; done
+cd ..
 ```
 
 6. `cd` into the repository and run the following to pull down cTAKES:
@@ -64,15 +66,15 @@ mvn install
 9. Deploy the War file:
 
 ```
-sudo mv target/ctakes-web-rest.war /var/lib/tomcat8/webapps
+sudo mv target/ctakes-web-rest.war /opt/tomcat/latest/webapps/
 
 # useful for debugging (uncomment):
-# tail -f /var/log/tomcat8/catalina.out
+# tail -f /opt/tomcat/latest/logs/catalina.out
 ```
 
-10. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service.
+10. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service. This should return a default index page.
 
-11. To test using a REST client like Postman, use the following URL: ` http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default` (ensure to use POST method and RAW response)
+11. Test the installation by issuting a POST request to `http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default`. You can do this using a client like Postman (remember to use the POST method and RAW response) or the command line using something like: 
 
 
 ## License
