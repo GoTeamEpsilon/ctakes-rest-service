@@ -14,10 +14,10 @@ _(Based on Ubuntu 18)_
 sudo apt-get update
 sudo apt-get install default-jdk
 sudo apt-get install mysql-server
-sudo mysql_secure_installation
+mysqladmin -u root password pass
 ```
 
-When prompted, set the ``root`` password to ``pass``. You can also use custom configurations and specify them in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`.
+The above sets the ``root`` password to ``pass``. You can also use custom configurations and specify them in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`.
 
 > Note: This repo assumes you installed MySQL on the default port 3066
 
