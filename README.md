@@ -74,7 +74,7 @@ sudo mv target/ctakes-web-rest.war /opt/tomcat/latest/webapps/
 
 10. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service. This should return a default index page.
 
-11. Test the installation by issuting a POST request to `http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default`. You can do this using a client like Postman (remember to use the POST method and RAW response) or the command line using something like: 
+11. Test the installation by issuting a POST request to `http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default`. You can do this using a client like Postman (remember to use the POST method and RAW response).
 
 
 ## License
