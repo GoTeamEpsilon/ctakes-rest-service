@@ -34,8 +34,8 @@ sudo apt-get install git
 5. Load in all SQL scripts in `./sno_rx_16ab_db`. This process may take several hours.
 
 ```bash
-cd ./sno_rx_16ab_db
-for fname in *.sql; do sudo mysql -u root < $fname; done
+cd ctakes-rest-service/sno_rx_16ab_db
+for fname in *.sql; do sudo mysql -u root -ppass < $fname; done
 cd ..
 ```
 
