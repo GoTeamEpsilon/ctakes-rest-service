@@ -14,10 +14,9 @@ _(Based on Ubuntu 18)_
 sudo apt-get update
 sudo apt-get install default-jdk
 sudo apt-get install mysql-server
-mysqladmin -u root password pass
 ```
 
-The above sets the ``root`` password to ``pass``. You can also use custom configurations and specify them in `./ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml`.
+Set the ``root`` password to ``pass``. Use the instructions [here](https://ua1.us/news/tutorials/tutorial-fix-mysql-access-denied-for-user-rootlocalhost-error/) if you are not prompted during setup.
 
 > Note: This repo assumes you installed MySQL on the default port 3066
 
@@ -74,7 +73,7 @@ sudo mv target/ctakes-web-rest.war /opt/tomcat/latest/webapps/
 
 10. Access the URL `http://localhost:8080/ctakes-web-rest/index.jsp` for testing the REST service. This should return a default index page.
 
-11. Test the installation by issuting a POST request to `http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default`. You can do this using a client like Postman (remember to use the POST method and RAW response).
+11. Test the installation by issuing a POST request to `http://localhost:8080/ctakes-web-rest/service/analyze?pipeline=Default`. You can do this using a client like Postman (remember to use the POST method and RAW response).
 
 
 ## License
