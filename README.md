@@ -20,7 +20,10 @@ Set the ``root`` password to ``pass``. Use the instructions [here](https://ua1.u
 
 > Note: This repo assumes you installed MySQL on the default port 3066
 
-2. Install Tomcat 8 using the detailed instructions [here](https://linuxize.com/post/how-to-install-tomcat-8-5-on-ubuntu-18.04/)). Open the inbound 8080 port so you can access from a browser using the instructions [here](https://stackoverflow.com/questions/26338301/ec2-how-to-add-port-8080-in-security-group).
+2. Install Tomcat 8 using the detailed instructions [here](https://linuxize.com/post/how-to-install-tomcat-8-5-on-ubuntu-18.04/)). Some important points:
+  - Open the inbound 8080 port so you can access from a browser using the instructions [here](https://stackoverflow.com/questions/26338301/ec2-how-to-add-port-8080-in-security-group).
+  - Increase the java heap size by running ``sudo vi /opt/tomcat/latest/bin/setenv.sh``, including the line ``CATALINA_OPTS="$CATALINA_OPTS -Xms5120m -Xmx5120m"`` and saving.
+  - Restart your machine to make sure Tomcat picks up the new settings
 
 3. Install Maven 3.5, Subversion, and Git.
 
