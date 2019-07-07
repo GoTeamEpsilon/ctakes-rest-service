@@ -165,7 +165,7 @@ mvn install
 
 ## Launch the Service
 
-The following creates a Web Application Resource (WAR) file for Tomcat to serve.
+The following moves the compiled Web Application Resource (WAR) file to Tomcat's webapps area to be served.
 
 ```
 sudo mv target/ctakes-web-rest.war /opt/tomcat/latest/webapps/
