@@ -62,7 +62,6 @@ Uncommenting these lines alone may not persist term information;
 persistence depends upon the TermConsumer.  -->
          <property key="rxnormTable" value="long"/>
          <property key="snomedct_usTable" value="long"/>
-         <property key="mdrTable" value="long"/>
       </properties>
    </conceptFactory>
 </conceptFactories>
