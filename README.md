@@ -198,7 +198,6 @@ curl -X POST \
 
 - This solution assumes MySQL uses the default port 3306. 
 - There is a minimum RAM requirement of 5 gigabytes. Tomcat is set to use up to 4 gigabytes.
-- For debugging, you can get the cTAKES output of a request by uncommenting [this](https://github.com/GoTeamEpsilon/ctakes-rest-service/blob/master/ctakes-web-rest/src/main/java/org/apache/ctakes/rest/service/CtakesRestController.java#L86). The output will be captured in a text file. 
 - For an exact view of the custom dictionary used in this solution, please see the [following](https://github.com/GoTeamEpsilon/ctakes-rest-service/blob/master/ctakes-web-rest/src/main/resources/org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml).
 
 
