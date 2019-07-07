@@ -18,24 +18,19 @@
  */
 package org.apache.ctakes.rest.service;
 
-import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.ctakes.core.pipeline.PipelineBuilder;
 import org.apache.ctakes.core.pipeline.PiperFileReader;
-import org.apache.ctakes.rest.util.XMLParser;
+import org.apache.ctakes.rest.util.JCasParser;
 import org.apache.log4j.Logger;
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-import org.apache.uima.cas.impl.XmiCasSerializer;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.JCasPool;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
-import java.io.ByteArrayInputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,13 +55,11 @@ public class CtakesRestController {
     public void init() throws ServletException {
         LOGGER.info("Initializing analysis engines and jcas pools");
         _pipelineRunners.put(DEFAULT_PIPELINE, new PipelineRunner(DEFAULT_PIPER_FILE_PATH));
-        _pipelineRunners.put(FULL_PIPELINE, new PipelineRunner(FULL_PIPER_FILE_PATH));
     }
 
     @RequestMapping(value = "/analyze", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Map<String, List<String>>> getAnalyzedJSON(@RequestBody String analysisText,
-                                                                  @RequestParam("pipeline") Optional<String> pipelineOptParam)
+    public Map<String, List<CuiResponse>> getAnalyzedJSON(@RequestBody String analysisText, @RequestParam("pipeline") Optional<String> pipelineOptParam)   
             throws Exception {
         String pipeline = DEFAULT_PIPELINE;
         if(pipelineOptParam.isPresent()) {
@@ -79,13 +72,9 @@ public class CtakesRestController {
 
     }
 
-    static private Map<String, Map<String, List<String>>> formatResults(JCas jcas) throws Exception {
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        XmiCasSerializer.serialize(jcas.getCas(), output);
-        String outputStr = output.toString();
-        // For debugging: Files.write(Paths.get("Result.xml"), outputStr.getBytes());
-        XMLParser parser = new XMLParser();
-        return parser.parse(new ByteArrayInputStream(outputStr.getBytes()));
+    static private Map<String, List<CuiResponse>> formatResults(JCas jcas) throws Exception {
+        JCasParser parser = new JCasParser();
+        return parser.parse(jcas);
     }
 
     static private final class PipelineRunner {
@@ -105,9 +94,9 @@ public class CtakesRestController {
             }
         }
 
-        public Map<String, Map<String, List<String>>> process(final String text) throws ServletException {
+        public Map<String, List<CuiResponse>> process(final String text) throws ServletException {
             JCas jcas = null;
-            Map<String, Map<String, List<String>>> resultMap = null;
+            Map<String, List<CuiResponse>> resultMap = null;
             if (text != null) {
                 try {
                     jcas = _pool.getJCas(-1);
