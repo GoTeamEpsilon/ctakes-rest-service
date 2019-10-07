@@ -4,17 +4,17 @@
 threads 3
 
 // Load a simple token processing pipeline from another pipeline file
-load pipers/TsDefaultTokenizerPipeline
+load pipers/TsDefaultTokenizerPipeline.piper
 
 // Add non-core annotators
 add ContextDependentTokenizerAnnotator
 addDescription POSTagger
 
 // Add Chunkers
-load pipers/TsChunkerSubPipe
+load pipers/TsChunkerSubPipe.piper
 
 // Default fast dictionary lookup
-load pipers/TsDictionarySubPipe
+load pipers/TsDictionarySubPipe.piper
 
 // Add Cleartk Entity Attribute annotators
-load pipers/TsAttributeCleartkSubPipe
+load pipers/TsAttributeCleartkSubPipe.piper
