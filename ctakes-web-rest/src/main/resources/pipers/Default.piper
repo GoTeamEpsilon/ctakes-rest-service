@@ -1,20 +1,53 @@
 // Commands and parameters to create a default plaintext document processing pipeline with UMLS lookup
 
+// @TODO FIXME
 // set the thread count
-threads 3
+// threads 3
+
+add ContextDependentTokenizerAnnotator
+add POSTagger
 
 // Load a simple token processing pipeline from another pipeline file
-load pipers/TsDefaultTokenizerPipeline
+// load pipers/TsDefaultTokenizerPipeline
+add SimpleSegmentAnnotator
+// add concurrent.ThreadSafeSentenceDetector
+add TokenizerAnnotatorPTB
 
 // Add non-core annotators
 add ContextDependentTokenizerAnnotator
 addDescription POSTagger
 
 // Add Chunkers
-load pipers/TsChunkerSubPipe
+// load pipers/TsChunkerSubPipe
+// add concurrent.ThreadSafeChunker
+addDescription adjuster.ChunkAdjuster NP,NP 1
+addDescription adjuster.ChunkAdjuster NP,PP,NP 2
 
 // Default fast dictionary lookup
-load pipers/TsDictionarySubPipe
+// load pipers/TsDictionarySubPipe
+cli LookupXml=org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml
+add DefaultJCasTermAnnotator LookupXml=org/apache/ctakes/dictionary/lookup/fast/customDictionary.xml
 
 // Add Cleartk Entity Attribute annotators
-load pipers/TsAttributeCleartkSubPipe
+// load pipers/TsAttributeCleartkSubPipe
+
+// Commands and parameters to create a default entity attributes processing sub-pipeline.  This is not a full pipeline.
+
+// Add the Dependency parser for use by cleartk
+// addDescription concurrent.ThreadSafeClearNlpDepParser
+// Add the Semantic Role Labeler parser for use by cleartk
+// addDescription concurrent.ThreadSafeClearNlpSemRoleLabeler
+
+// Add the cleartk package for cleartk class lookups
+package org.apache.ctakes.assertion.medfacts.cleartk
+
+// Add the cleartk attribute engines, logging for them as a block
+// add StartFinishLogger LOGGER_NAME=CleartkAnalysisEngine LOGGER_TASK="Assigning Attributes" IS_START=true
+addDescription PolarityCleartkAnalysisEngine
+addDescription UncertaintyCleartkAnalysisEngine
+addDescription HistoryCleartkAnalysisEngine
+addDescription ConditionalCleartkAnalysisEngine
+addDescription GenericCleartkAnalysisEngine
+addDescription SubjectCleartkAnalysisEngine
+// add StartFinishLogger LOGGER_NAME=CleartkAnalysisEngine LOGGER_TASK="Assigning Attributes"
+
