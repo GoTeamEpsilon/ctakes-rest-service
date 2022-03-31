@@ -10,7 +10,7 @@
 	<description></description>
 	<properties>
 		<ctakes.version>4.0.1-SNAPSHOT</ctakes.version>
-		<springframework.version>4.3.18.RELEASE</springframework.version>
+		<springframework.version>5.3.18</springframework.version>
 		<jackson.version>2.9.9</jackson.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
